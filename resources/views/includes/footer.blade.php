@@ -25,29 +25,12 @@
 
             <a href="{{ url('/') }}">Inicio</a>
 
-            <a href="{{ route('aprendice.index') }}">
-                Aprendices
+            <a href="{{ route('ofertas.index') }}">
+                Ofertas
             </a>
 
-            <a href="{{ route('course.index') }}">
-                Cursos
-            </a>
+            
 
-            <a href="{{ route('teacher.index') }}">
-                Instructores
-            </a>
-
-            <a href="{{ route('area.index') }}">
-                Áreas de Formación
-            </a>
-
-            <a href="{{ route('training_center.index') }}">
-                Centros de Formación
-            </a>
-
-            <a href="{{ route('computer.index') }}">
-                Computadores
-            </a>
 
         </div>
 

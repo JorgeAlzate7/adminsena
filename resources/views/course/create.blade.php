@@ -1,64 +1,172 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/cursos.css') }}">
+@endsection
+
 @section('content')
-<h1>formulario curso</h1>
 
-<form action="{{route('course.store')}}" method="POST" enctype="multipart/form-data">
+<div class="cursos-page">
 
-@csrf
+    <div class="curso-form-card">
 
-<label>
-    Numero curso:
-    <br>
-    <input type="number" name="course number">
-</label>
-<br>
+        <div class="curso-form-header">
 
-<label>
-    Dia:
-    <br>
-    <input type="text" name="day">
-</label>
-<br>
-<br>
+            <div>
 
-{{-- {{$areas}} --}}
+                <span>GESTIÓN DE CURSOS</span>
 
-<label for="area_id">Area</label>
+                <h1>
+                    Nuevo <strong>curso.</strong>
+                </h1>
 
-    <select name="area_id" id="user_id" class="form-control">
-        <option value="">Seleccione un area</option>
+                <p>
+                    Registra un nuevo curso de formación.
+                </p>
 
-        @foreach($areas as $area)
-            <option value="{{ $area->id }}">
-                {{ $area->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+            </div>
+
+            <a
+                href="{{ route('course.index') }}"
+                class="curso-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
+
+        </div>
 
 
-    {{-- {{$training_centers}} --}}
+        <form
+            action="{{ route('course.store') }}"
+            method="POST"
+        >
 
-<label for="training_center_id">Training center</label>
+            @csrf
 
-    <select name="training_center_id" id="user_id" class="form-control">
-        <option value="">Seleccione un centro de formacion</option>
+            <div class="curso-form-group">
 
-        @foreach($training_centers as $training_center)
-            <option value="{{ $training_center->id }}">
-                {{ $training_center->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+                <label for="course_number">
+                    Número de curso
+                </label>
+
+                <input
+                    type="number"
+                    name="course_number"
+                    id="course_number"
+                    value="{{ old('course_number') }}"
+                    placeholder="Número del curso"
+                    required
+                >
+
+            </div>
 
 
+            <div class="curso-form-group">
 
-<button type="submit">Enviar Formulario:</button>
-</form>
+                <label for="day">
+                    Día
+                </label>
 
+                <input
+                    type="text"
+                    name="day"
+                    id="day"
+                    value="{{ old('day') }}"
+                    placeholder="Día de formación"
+                    required
+                >
+
+            </div>
+
+
+            <div class="curso-form-group">
+
+                <label for="area_id">
+                    Área
+                </label>
+
+                <select
+                    name="area_id"
+                    id="area_id"
+                    required
+                >
+
+                    <option value="">
+                        Seleccione un área
+                    </option>
+
+                    @foreach($areas as $area)
+
+                        <option
+                            value="{{ $area->id }}"
+                            {{ old('area_id') == $area->id ? 'selected' : '' }}
+                        >
+                            {{ $area->name }}
+                        </option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+
+
+            <div class="curso-form-group">
+
+                <label for="training_center_id">
+                    Centro de formación
+                </label>
+
+                <select
+                    name="training_center_id"
+                    id="training_center_id"
+                    required
+                >
+
+                    <option value="">
+                        Seleccione un centro de formación
+                    </option>
+
+                    @foreach($training_centers as $training_center)
+
+                        <option
+                            value="{{ $training_center->id }}"
+                            {{ old('training_center_id') == $training_center->id ? 'selected' : '' }}
+                        >
+                            {{ $training_center->name }}
+                        </option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+
+
+            <div class="curso-form-actions">
+
+                <a
+                    href="{{ route('course.index') }}"
+                    class="curso-cancel"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="cursos-button"
+                >
+                    <i class="bi bi-plus-circle"></i>
+                    Crear curso
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
 @endsection

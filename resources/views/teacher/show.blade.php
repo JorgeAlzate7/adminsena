@@ -1,43 +1,122 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/profesores.css') }}">
+@endsection
+
 @section('content')
-<div class="container mt-4" style="max-width: 600px;">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Detalle del Profesor #{{ $profesor->id }}</h5>
-            <a href="{{ route('teacher.index') }}" class="btn btn-sm btn-light">Volver</a>
-        </div>
-        
-        <div class="card-body">
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">ID:</label>
-                <p class="fs-5">{{ $profesor->id }}</p>
+
+<div class="profesores-page">
+
+    <div class="profesor-detail-card">
+
+        <div class="profesor-detail-header">
+
+            <div>
+
+                <span>INFORMACIÓN DEL INSTRUCTOR</span>
+
+                <h1>
+                    Detalle del <strong>instructor.</strong>
+                </h1>
+
+                <p>
+                    Consulta la información registrada del instructor.
+                </p>
+
             </div>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Nombre del Profesor:</label>
-                <p class="fs-5">{{ $profesor->name }}</p>
-            </div>
+            <a
+                href="{{ route('teacher.index') }}"
+                class="profesor-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Correo del Profesor:</label>
-                <p class="fs-5">{{ $profesor->email }}</p>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Area:</label>
-                <p class="fs-5">{{ $profesor->area_id }}</p>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Centro de Formación:</label>
-                <p class="fs-5">{{ $profesor->training_center_id }}</p>
-            </div>
         </div>
 
-        <div class="card-footer text-end">
-            <a href="{{ route('teacher.index') }}" class="btn btn-secondary">Regresar a la lista</a>
+
+        <div class="profesor-detail-grid">
+
+            <div class="profesor-detail-item">
+
+                <span>ID</span>
+
+                <strong>
+                    #{{ $profesor->id }}
+                </strong>
+
+            </div>
+
+
+            <div class="profesor-detail-item">
+
+                <span>NOMBRE</span>
+
+                <strong>
+                    {{ $profesor->name }}
+                </strong>
+
+            </div>
+
+
+            <div class="profesor-detail-item">
+
+                <span>CORREO</span>
+
+                <strong>
+                    {{ $profesor->email }}
+                </strong>
+
+            </div>
+
+
+            <div class="profesor-detail-item">
+
+                <span>ÁREA</span>
+
+                <strong>
+                    {{ $profesor->area_id }}
+                </strong>
+
+            </div>
+
+
+            <div class="profesor-detail-item">
+
+                <span>CENTRO DE FORMACIÓN</span>
+
+                <strong>
+                    {{ $profesor->training_center_id }}
+                </strong>
+
+            </div>
+
         </div>
+
+
+        <div class="profesor-detail-actions">
+
+            <a
+                href="{{ route('teacher.edit', $profesor->id) }}"
+                class="profesores-button"
+            >
+                <i class="bi bi-pencil"></i>
+                Editar instructor
+            </a>
+
+            <a
+                href="{{ route('teacher.index') }}"
+                class="profesor-cancel"
+            >
+                Regresar
+            </a>
+
+        </div>
+
     </div>
+
 </div>
+
 @endsection

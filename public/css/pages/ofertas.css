@@ -1,0 +1,217 @@
+.ofertas-page {
+    background: #f5f5f7;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    color: #1d1d1f;
+}
+
+
+/* HEADER */
+
+.ofertas-header {
+    text-align: center;
+    padding: 80px 25px 50px;
+    background: white;
+}
+
+.ofertas-header span {
+    color: #39A900;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.ofertas-header h1 {
+    font-size: 60px;
+    margin: 15px 0;
+}
+
+.ofertas-header h1 strong {
+    color: #39A900;
+}
+
+.ofertas-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* BUSCADOR */
+
+.ofertas-search {
+    max-width: 850px;
+    margin: -25px auto 30px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.ofertas-search i {
+    color: #39A900;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.ofertas-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.ofertas-search button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: #39A900;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* FILTROS */
+
+.ofertas-filtros {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 25px;
+
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: white;
+    color: #555;
+    cursor: pointer;
+}
+
+.filtro.active,
+.filtro:hover {
+    background: #39A900;
+    color: white;
+}
+
+
+/* LISTA */
+
+.ofertas-lista {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 25px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETAS */
+
+.oferta-card {
+    padding: 30px;
+    background: white;
+    border-radius: 25px;
+
+    transition: .25s;
+}
+
+.oferta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.oferta-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #e8f6e2;
+    color: #39A900;
+
+    font-size: 25px;
+}
+
+.oferta-area {
+    display: block;
+    margin-top: 25px;
+
+    color: #39A900;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.oferta-card h2 {
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.oferta-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.oferta-info {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.oferta-info span {
+    color: #777;
+    font-size: 14px;
+}
+
+.oferta-info i {
+    color: #39A900;
+}
+
+.oferta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #39A900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 700px) {
+
+    .ofertas-header h1 {
+        font-size: 42px;
+    }
+
+    .ofertas-search {
+        margin: 20px;
+    }
+
+    .ofertas-search button {
+        display: none;
+    }
+
+    .ofertas-lista {
+        grid-template-columns: 1fr;
+    }
+
+}

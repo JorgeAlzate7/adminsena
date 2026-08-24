@@ -1,0 +1,365 @@
+.profesores-page {
+    min-height: 70vh;
+    padding: 60px 7%;
+    background: #f7f7f8;
+}
+
+
+/* ENCABEZADOS */
+
+.profesores-header,
+.profesor-form-header,
+.profesor-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.profesores-header h1,
+.profesor-form-header h1,
+.profesor-detail-header h1 {
+    margin: 0 0 8px;
+    color: #111;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.profesores-header p,
+.profesor-form-header p,
+.profesor-detail-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.profesor-form-header span,
+.profesor-detail-header span {
+    color: #39A900;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.profesor-form-header h1 strong,
+.profesor-detail-header h1 strong {
+    color: #39A900;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.profesores-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.profesores-button:hover {
+    background: #2f8f00;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* TABLA */
+
+.profesores-table-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.profesores-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profesores-table-card th {
+    padding: 18px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: .8px;
+}
+
+.profesores-table-card td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+    font-size: 14px;
+}
+
+.profesores-table-card tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* ACCIONES */
+
+.profesores-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profesores-actions form {
+    margin: 0;
+}
+
+.profesor-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.profesor-action:hover {
+    background: #2f8f00;
+    color: white;
+}
+
+
+/* FORMULARIO */
+
+.profesor-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.profesor-form-group {
+    margin-bottom: 22px;
+}
+
+.profesor-form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profesor-form-group input,
+.profesor-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    background: #fafafa;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    color: #222;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.profesor-form-group input:focus,
+.profesor-form-group select:focus {
+    background: white;
+    border-color: #39A900;
+
+    box-shadow: 0 0 0 3px rgba(57,169,0,.10);
+}
+
+
+/* BOTONES FORMULARIO */
+
+.profesor-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.profesor-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px 17px;
+
+    background: white;
+    color: #555;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.profesor-cancel:hover {
+    background: #f3f3f3;
+    color: #222;
+}
+
+
+/* DETALLE */
+
+.profesor-detail-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.profesor-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.profesor-detail-item {
+    padding: 22px;
+
+    background: #f7f7f8;
+    border-radius: 12px;
+}
+
+.profesor-detail-item span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.profesor-detail-item strong {
+    color: #111;
+    font-size: 18px;
+}
+
+.profesor-detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* VACÍO */
+
+.profesores-empty {
+    padding: 40px !important;
+    text-align: center;
+
+    color: #777 !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .profesores-page {
+        padding: 40px 20px;
+    }
+
+    .profesores-header,
+    .profesor-form-header,
+    .profesor-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .profesores-header h1,
+    .profesor-form-header h1,
+    .profesor-detail-header h1 {
+        font-size: 32px;
+    }
+
+    .profesores-button {
+        width: 100%;
+    }
+
+    .profesores-table-card {
+        overflow-x: auto;
+    }
+
+    .profesores-actions {
+        flex-wrap: wrap;
+    }
+
+    .profesor-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profesor-form-actions,
+    .profesor-detail-actions {
+        flex-direction: column;
+    }
+
+    .profesor-cancel {
+        width: 100%;
+    }
+}

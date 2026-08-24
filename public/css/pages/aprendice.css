@@ -1,853 +1,452 @@
-/* =========================================
-   PÁGINA APRENDICES
-========================================= */
-
 .aprendice-page {
-
-    padding-top: 60px;
-    padding-bottom: 70px;
-
+    min-height: 70vh;
+    padding: 60px 7%;
+    background: #f7f7f8;
 }
 
 
-/* =========================================
-   ENCABEZADO
-========================================= */
+/* ENCABEZADO */
 
-.aprendice-header {
-
+.aprendice-header,
+.aprendice-form-header {
     display: flex;
-
-    align-items: center;
-
     justify-content: space-between;
-
-    margin-bottom: 35px;
-
-}
-
-
-.aprendice-subtitle {
-
-    color: #39A900;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-}
-
-
-.aprendice-header h1 {
-
-    margin: 5px 0 8px;
-
-    font-size: 38px;
-
-    font-weight: 700;
-
-    letter-spacing: -1px;
-
-    color: #1d1d1f;
-
-}
-
-
-.aprendice-header p {
-
-    margin: 0;
-
-    color: #6e6e73;
-
-    font-size: 15px;
-
-}
-
-
-/* =========================================
-   BOTÓN NUEVO
-========================================= */
-
-.aprendice-btn-primary {
-
-    display: inline-flex;
-
     align-items: center;
+    margin-bottom: 35px;
+}
 
+.aprendice-header h1,
+.aprendice-form-header h1 {
+    margin: 0 0 8px;
+    color: #111;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.aprendice-header h1 strong,
+.aprendice-form-header h1 strong {
+    color: #39A900;
+}
+
+.aprendice-header p,
+.aprendice-form-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.aprendice-form-header span,
+.aprendice-subtitle {
+    color: #39A900;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* BOTONES */
+
+.aprendice-btn-primary,
+.aprendice-btn-save {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
 
-    padding: 11px 18px;
+    padding: 13px 18px;
 
-    background-color: #39A900;
-
+    background: #39A900;
     color: white;
 
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.aprendice-btn-primary:hover,
+.aprendice-btn-save:hover {
+    background: #2f8f00;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.aprendice-btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px 17px;
+
+    background: white;
+    color: #555;
+
+    border: 1px solid #ddd;
     border-radius: 8px;
 
     text-decoration: none;
 
     font-size: 14px;
-
     font-weight: 600;
 
-    border: none;
+    transition: .2s;
+}
 
-    transition: 0.2s;
-
+.aprendice-btn-cancel:hover {
+    background: #f3f3f3;
+    color: #222;
 }
 
 
-.aprendice-btn-primary:hover {
-
-    background-color: #2f8f00;
-
-    color: white;
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 5px 15px
-        rgba(57, 169, 0, 0.25);
-
-}
-
-
-/* =========================================
-   TARJETA
-========================================= */
+/* TABLA */
 
 .aprendice-card {
-
-    background-color: #ffffff;
-
-    border: 1px solid #e5e5e7;
-
-    border-radius: 16px;
-
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
     overflow: hidden;
 
-    box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.06);
-
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
 }
-
-
-/* =========================================
-   CABECERA TARJETA
-========================================= */
-
-.aprendice-card-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 25px 28px;
-
-    border-bottom: 1px solid #eeeeee;
-
-}
-
-
-.aprendice-card-header h2 {
-
-    margin: 0 0 5px;
-
-    font-size: 18px;
-
-    font-weight: 600;
-
-    color: #1d1d1f;
-
-}
-
-
-.aprendice-card-header p {
-
-    margin: 0;
-
-    color: #86868b;
-
-    font-size: 13px;
-
-}
-
-
-/* =========================================
-   CONTADOR
-========================================= */
-
-.aprendice-count {
-
-    color: #39A900;
-
-    font-size: 18px;
-
-    font-weight: 700;
-
-    text-align: right;
-
-}
-
-
-.aprendice-count span {
-
-    display: block;
-
-    color: #86868b;
-
-    font-size: 11px;
-
-    font-weight: 400;
-
-}
-
-
-/* =========================================
-   TABLA
-========================================= */
 
 .aprendice-table {
-
-    margin: 0 !important;
-
-    vertical-align: middle;
-
+    width: 100%;
+    border-collapse: collapse;
 }
 
-
-.aprendice-table thead th {
-
-    padding: 17px 20px;
-
-    background-color: #fafafa;
-
-    color: #6e6e73;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.8px;
-
-    text-transform: uppercase;
-
-    border-bottom: 1px solid #e5e5e7;
-
-    white-space: nowrap;
-
-}
-
-
-.aprendice-table tbody td {
-
+.aprendice-table th {
     padding: 18px 20px;
 
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #ddd;
 
-    color: #1d1d1f;
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
 
+    text-align: left;
+    letter-spacing: .8px;
+}
+
+.aprendice-table td {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #222;
     font-size: 14px;
-
 }
-
-
-.aprendice-table tbody tr {
-
-    transition: 0.2s;
-
-}
-
 
 .aprendice-table tbody tr:hover {
-
-    background-color: #fafdf8;
-
+    background: #fafafa;
 }
 
 
-.aprendice-table tbody tr:last-child td {
+/* ACCIONES */
 
-    border-bottom: none;
-
-}
-
-
-/* =========================================
-   NOMBRE DEL APRENDIZ
-========================================= */
-
-.aprendice-name {
-
+.aprendice-actions {
     display: flex;
-
     align-items: center;
+    gap: 8px;
+}
 
-    gap: 12px;
+.aprendice-actions form {
+    margin: 0;
+}
 
+.aprendice-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.aprendice-btn:hover {
+    background: #2f8f00;
+    color: white;
 }
 
 
-.aprendice-name strong {
+/* FORMULARIO */
 
+.aprendice-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.aprendice-form-group {
+    margin-bottom: 22px;
+}
+
+.aprendice-form-group label {
     display: block;
 
-    color: #1d1d1f;
+    margin-bottom: 8px;
+
+    color: #333;
 
     font-size: 14px;
+    font-weight: 600;
+}
 
+.aprendice-form-group input,
+.aprendice-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    background: #fafafa;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    color: #222;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.aprendice-form-group input:focus,
+.aprendice-form-group select:focus {
+    background: white;
+    border-color: #39A900;
+
+    box-shadow: 0 0 0 3px rgba(57,169,0,.10);
 }
 
 
-.aprendice-name small {
+/* BOTONES FORMULARIO */
 
-    display: block;
+.aprendice-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 
-    margin-top: 3px;
-
-    color: #86868b;
-
-    font-size: 11px;
-
+    margin-top: 30px;
 }
 
 
-/* =========================================
-   AVATAR
-========================================= */
+/* DETALLE */
 
-.aprendice-avatar {
+.aprendice-detail-card {
+    max-width: 900px;
+    margin: 0 auto;
 
-    width: 38px;
+    padding: 40px;
 
-    height: 38px;
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.aprendice-detail-profile {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.aprendice-detail-avatar {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #39A900;
+    color: white;
 
     border-radius: 50%;
 
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.aprendice-detail-profile h2 {
+    margin: 0 0 5px;
+
+    color: #111;
+    font-size: 24px;
+}
+
+.aprendice-detail-profile p {
+    margin: 0;
+    color: #777;
+}
+
+
+/* INFORMACIÓN */
+
+.aprendice-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.aprendice-detail-item {
     display: flex;
-
     align-items: center;
+    gap: 15px;
 
+    padding: 20px;
+
+    background: #f7f7f8;
+
+    border-radius: 12px;
+}
+
+.aprendice-detail-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
 
     flex-shrink: 0;
 
-    background-color: #e9f6e3;
-
+    background: rgba(57,169,0,.10);
     color: #39A900;
 
-    font-size: 15px;
+    border-radius: 10px;
 
+    font-size: 18px;
+}
+
+.aprendice-detail-item span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777;
+
+    font-size: 11px;
     font-weight: 700;
 
+    letter-spacing: .7px;
+}
+
+.aprendice-detail-item strong {
+    color: #111;
+    font-size: 16px;
+}
+
+.aprendice-detail-item small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #777;
 }
 
 
-/* =========================================
-   EMAIL
-========================================= */
+/* BOTONES DETALLE */
 
-.aprendice-email {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #555;
-
-}
-
-
-.aprendice-email i {
-
-    color: #39A900;
-
-}
-
-
-/* =========================================
-   TELÉFONO
-========================================= */
-
-.aprendice-phone {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #555;
-
-}
-
-
-.aprendice-phone i {
-
-    color: #39A900;
-
-}
-
-
-/* =========================================
-   BADGES
-========================================= */
-
-.aprendice-badge {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    padding: 6px 10px;
-
-    background-color: #f5f5f7;
-
-    border-radius: 6px;
-
-    color: #555;
-
-    font-size: 12px;
-
-}
-
-
-.aprendice-badge i {
-
-    color: #39A900;
-
-}
-
-
-/* =========================================
-   BOTONES DE ACCIONES
-========================================= */
-
-.aprendice-actions {
-
+.aprendice-detail-actions {
     display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
+    margin-top: 30px;
 }
 
 
-.aprendice-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 6px;
-
-    padding: 7px 11px;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    border: none;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-
-}
-
-
-.aprendice-btn i {
-
-    font-size: 13px;
-
-}
-
-
-/* TODOS VERDES */
-
-.btn-mostrar,
-.btn-editar,
-.btn-eliminar {
-
-    background-color: #39A900;
-
-    color: white;
-
-}
-
-
-.btn-mostrar:hover,
-.btn-editar:hover,
-.btn-eliminar:hover {
-
-    background-color: #2f8f00;
-
-    color: white;
-
-    transform: translateY(-1px);
-
-    box-shadow:
-        0 4px 10px
-        rgba(57, 169, 0, 0.25);
-
-}
-
-
-.aprendice-actions form {
-
-    margin: 0;
-
-}
-
-
-/* =========================================
-   TABLA VACÍA
-========================================= */
+/* VACÍO */
 
 .aprendice-empty {
-
-    padding: 70px 20px !important;
+    padding: 40px !important;
 
     text-align: center;
 
+    color: #777 !important;
 }
 
 
-.aprendice-empty > i {
+/* RESPONSIVE */
 
-    display: block;
-
-    margin-bottom: 15px;
-
-    color: #39A900;
-
-    font-size: 40px;
-
-}
-
-
-.aprendice-empty h3 {
-
-    margin-bottom: 7px;
-
-    color: #1d1d1f;
-
-    font-size: 18px;
-
-}
-
-
-.aprendice-empty p {
-
-    margin-bottom: 20px;
-
-    color: #86868b;
-
-    font-size: 14px;
-
-}
-
-
-/* =========================================
-   FORMULARIO CREATE / EDIT
-========================================= */
-
-.aprendice-form-card {
-
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    padding: 35px;
-
-    background: white;
-
-    border: 1px solid #e5e5e7;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 4px 20px
-        rgba(0, 0, 0, 0.06);
-
-}
-
-
-.aprendice-form-card label {
-
-    margin-bottom: 8px;
-
-    color: #1d1d1f;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-}
-
-
-.aprendice-form-card .form-control,
-.aprendice-form-card .form-select {
-
-    padding: 11px 13px;
-
-    border: 1px solid #d2d2d7;
-
-    border-radius: 8px;
-
-    box-shadow: none;
-
-}
-
-
-.aprendice-form-card .form-control:focus,
-.aprendice-form-card .form-select:focus {
-
-    border-color: #39A900;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(57, 169, 0, 0.12);
-
-}
-
-
-/* =========================================
-   BOTONES FORMULARIO
-========================================= */
-
-.aprendice-form-buttons {
-
-    display: flex;
-
-    gap: 10px;
-
-    margin-top: 25px;
-
-}
-
-
-.aprendice-btn-save {
-
-    padding: 11px 18px;
-
-    background: #39A900;
-
-    color: white;
-
-    border: none;
-
-    border-radius: 8px;
-
-    font-weight: 600;
-
-}
-
-
-.aprendice-btn-save:hover {
-
-    background: #2f8f00;
-
-}
-
-
-.aprendice-btn-cancel {
-
-    padding: 11px 18px;
-
-    background: #f5f5f7;
-
-    color: #333;
-
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-}
-
-
-.aprendice-btn-cancel:hover {
-
-    background: #e5e5e7;
-
-    color: #111;
-
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 
     .aprendice-page {
-
-        padding-top: 35px;
-
+        padding: 40px 20px;
     }
 
-
-    .aprendice-header {
-
+    .aprendice-header,
+    .aprendice-form-header {
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 20px;
-
     }
 
-
-    .aprendice-header h1 {
-
-        font-size: 30px;
-
+    .aprendice-header h1,
+    .aprendice-form-header h1 {
+        font-size: 32px;
     }
 
-
-    .aprendice-card-header {
-
-        padding: 20px;
-
+    .aprendice-btn-primary {
+        width: 100%;
     }
 
+    .aprendice-card {
+        overflow-x: auto;
+    }
 
     .aprendice-actions {
-
-        justify-content: flex-start;
-
         flex-wrap: wrap;
-
     }
 
-}
+    .aprendice-detail-grid {
+        grid-template-columns: 1fr;
+    }
 
-/* =========================================
-   BOTONES DE ACCIONES
-========================================= */
+    .aprendice-form-buttons,
+    .aprendice-detail-actions {
+        flex-direction: column;
+    }
 
-.aprendice-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-
-/* BOTÓN GENERAL */
-
-.aprendice-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-
-    padding: 8px 14px;
-
-    border-radius: 6px;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    border: none;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-
-/* ICONOS */
-
-.aprendice-btn i {
-    font-size: 15px;
-}
-
-
-/* =========================================
-   MOSTRAR
-========================================= */
-
-.btn-mostrar {
-    background-color: #39A900;
-    color: white;
-}
-
-.btn-mostrar:hover {
-    background-color: #2f8f00;
-    color: white;
-}
-
-
-/* =========================================
-   EDITAR
-========================================= */
-
-.btn-editar {
-    background-color: #39A900;
-    color: white;
-}
-
-.btn-editar:hover {
-    background-color: #2f8f00;
-    color: white;
-}
-
-
-/* =========================================
-   ELIMINAR
-========================================= */
-
-.btn-eliminar {
-    background-color: #39A900;
-    color: white;
-}
-
-.btn-eliminar:hover {
-    background-color: #2f8f00;
-    color: white;
-}
-
-
-/* =========================================
-   EFECTO
-========================================= */
-
-.aprendice-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(57, 169, 0, 0.25);
-}
-
-
-.aprendice-btn:active {
-    transform: scale(0.97);
-}
-
-
-/* QUITAR MARGEN DEL FORMULARIO */
-
-.aprendice-actions form {
-    margin: 0;
+    .aprendice-btn-cancel,
+    .aprendice-btn-save {
+        width: 100%;
+    }
 }

@@ -99,3 +99,8 @@ Route::get('/conocenos', [ConocenosController::class, 'index'])->name('conocenos
 
 // CONTACTO
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto.index');
+
+// OFERTAS 
+use App\Http\Controllers\OfertaController;
+
+Route::get('/ofertas', [OfertaController::class, 'index'])->name('ofertas.index');

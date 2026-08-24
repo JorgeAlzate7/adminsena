@@ -1,52 +1,50 @@
 @extends('layouts.app')
 
 @section('css')
-
-<link
-    rel="stylesheet"
-    href="{{ asset('css/pages/aprendice.css') }}"
->
-
+<link rel="stylesheet" href="{{ asset('css/pages/aprendice.css') }}">
 @endsection
-
 
 @section('content')
 
-<div class="container aprendice-page">
+<div class="aprendice-page">
 
-    <!-- ENCABEZADO -->
+    <div class="aprendice-form-card">
 
-    <div class="aprendice-header">
+        <div class="aprendice-form-header">
 
-        <div>
+            <div>
 
-            <h1>Nuevo aprendiz</h1>
+                <span>GESTIÓN DE APRENDICES</span>
 
-            <p>
-                Registra un nuevo aprendiz en el sistema.
-            </p>
+                <h1>
+                    Nuevo <strong>aprendiz.</strong>
+                </h1>
+
+                <p>
+                    Registra un nuevo aprendiz en el sistema.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ route('aprendice.index') }}"
+                class="aprendice-btn-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
 
         </div>
 
-    </div>
-
-
-    <!-- FORMULARIO -->
-
-    <div class="aprendice-form-card">
 
         <form
             action="{{ route('aprendice.store') }}"
             method="POST"
-            enctype="multipart/form-data"
         >
 
             @csrf
 
-
-            <!-- NOMBRE -->
-
-            <div class="mb-3">
+            <div class="aprendice-form-group">
 
                 <label for="name">
                     Nombre
@@ -56,54 +54,51 @@
                     type="text"
                     name="name"
                     id="name"
-                    class="form-control"
+                    value="{{ old('name') }}"
                     placeholder="Ingrese el nombre"
+                    required
                 >
 
             </div>
 
 
-            <!-- EMAIL -->
-
-            <div class="mb-3">
+            <div class="aprendice-form-group">
 
                 <label for="email">
-                    Email
+                    Correo electrónico
                 </label>
 
                 <input
                     type="email"
                     name="email"
                     id="email"
-                    class="form-control"
+                    value="{{ old('email') }}"
                     placeholder="Ingrese el correo"
+                    required
                 >
 
             </div>
 
 
-            <!-- NÚMERO CELULAR -->
-
-            <div class="mb-3">
+            <div class="aprendice-form-group">
 
                 <label for="cell_number">
                     Número celular
                 </label>
 
                 <input
-                    type="number"
+                    type="text"
                     name="cell_number"
                     id="cell_number"
-                    class="form-control"
+                    value="{{ old('cell_number') }}"
                     placeholder="Ingrese el número celular"
+                    required
                 >
 
             </div>
 
 
-            <!-- CURSO -->
-
-            <div class="mb-3">
+            <div class="aprendice-form-group">
 
                 <label for="course_id">
                     Curso
@@ -112,7 +107,6 @@
                 <select
                     name="course_id"
                     id="course_id"
-                    class="form-select"
                 >
 
                     <option value="">
@@ -121,10 +115,11 @@
 
                     @foreach($courses as $course)
 
-                        <option value="{{ $course->id }}">
-
+                        <option
+                            value="{{ $course->id }}"
+                            {{ old('course_id') == $course->id ? 'selected' : '' }}
+                        >
                             {{ $course->course_number }}
-
                         </option>
 
                     @endforeach
@@ -134,9 +129,7 @@
             </div>
 
 
-            <!-- COMPUTADOR -->
-
-            <div class="mb-3">
+            <div class="aprendice-form-group">
 
                 <label for="computer_id">
                     Computador
@@ -145,7 +138,6 @@
                 <select
                     name="computer_id"
                     id="computer_id"
-                    class="form-select"
                 >
 
                     <option value="">
@@ -154,10 +146,11 @@
 
                     @foreach($computers as $computer)
 
-                        <option value="{{ $computer->id }}">
-
+                        <option
+                            value="{{ $computer->id }}"
+                            {{ old('computer_id') == $computer->id ? 'selected' : '' }}
+                        >
                             {{ $computer->number }}
-
                         </option>
 
                     @endforeach
@@ -167,30 +160,22 @@
             </div>
 
 
-            <!-- BOTONES -->
-
             <div class="aprendice-form-buttons">
-
-                <button
-                    type="submit"
-                    class="aprendice-btn-save"
-                >
-
-                    <i class="bi bi-check-circle"></i>
-
-                    Guardar aprendiz
-
-                </button>
-
 
                 <a
                     href="{{ route('aprendice.index') }}"
                     class="aprendice-btn-cancel"
                 >
-
                     Cancelar
-
                 </a>
+
+                <button
+                    type="submit"
+                    class="aprendice-btn-save"
+                >
+                    <i class="bi bi-check-circle"></i>
+                    Guardar aprendiz
+                </button>
 
             </div>
 

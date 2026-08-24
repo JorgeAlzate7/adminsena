@@ -1,82 +1,131 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/cursos.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="cursos-page">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="cursos-header">
 
-            <h1>CURSOS</h1>
+        <div>
+            <h1>Cursos</h1>
 
-            <a href="{{ route('course.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> NUEVOS CURSOS
-            </a>
-
+            <p>
+                Administración de los cursos de formación registrados.
+            </p>
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
+        <a
+            href="{{ route('course.create') }}"
+            class="cursos-button"
+        >
+            <i class="bi bi-plus-circle"></i>
+            Nuevo curso
+        </a>
+
+    </div>
+
+
+    <div class="cursos-table-card">
+
+        <table>
 
             <thead>
                 <tr>
-                    <th>Número de curso</th>
-                    <th>Día</th>
-                    <th>Área</th>
-                    <th>Centro de formación</th>
-                    <th>Acciones</th>
+                    <th>NÚMERO</th>
+                    <th>DÍA</th>
+                    <th>ÁREA</th>
+                    <th>CENTRO DE FORMACIÓN</th>
+                    <th>ACCIONES</th>
                 </tr>
             </thead>
 
             <tbody>
 
-                @foreach ($courses as $course)
+                @forelse ($courses as $course)
 
                     <tr>
 
-                        <td>{{ $course->course_number }}</td>
+                        <td>
+                            {{ $course->course_number }}
+                        </td>
 
-                        <td>{{ $course->day }}</td>
+                        <td>
+                            {{ $course->day }}
+                        </td>
 
-                        <td>{{ $course->area->name }}</td>
+                        <td>
+                            {{ $course->area->name ?? 'Sin área' }}
+                        </td>
 
-                        <td>{{ $course->training_center -> name ?? '' }}</td>
+                        <td>
+                            {{ $course->training_center->name ?? 'Sin centro' }}
+                        </td>
 
                         <td>
 
-                            <a href="{{ route('course.show', $course->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
+                            <div class="cursos-actions">
 
-                            <a href="{{ route('course.edit', $course->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
+                                <a
+                                    href="{{ route('course.show', $course->id) }}"
+                                    class="curso-action"
+                                >
+                                    <i class="bi bi-eye"></i>
+                                    Mostrar
+                                </a>
 
-                            <form action="{{ route('course.destroy', $course->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                                <a
+                                    href="{{ route('course.edit', $course->id) }}"
+                                    class="curso-action"
+                                >
+                                    <i class="bi bi-pencil"></i>
+                                    Editar
+                                </a>
 
-                                @csrf
-                                @method('DELETE')
+                                <form
+                                    action="{{ route('course.destroy', $course->id) }}"
+                                    method="POST"
+                                >
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este curso?')">
-                                    Eliminar
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
 
-                            </form>
+                                    <button
+                                        type="submit"
+                                        class="curso-action"
+                                        onclick="return confirm('¿Está seguro de eliminar este curso?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
 
                         </td>
 
                     </tr>
 
-                @endforeach
+                @empty
+
+                    <tr>
+                        <td colspan="5" class="cursos-empty">
+                            No hay cursos registrados.
+                        </td>
+                    </tr>
+
+                @endforelse
 
             </tbody>
 
         </table>
 
     </div>
+
+</div>
 
 @endsection

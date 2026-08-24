@@ -1,34 +1,100 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/centros.css') }}">
+@endsection
+
 @section('content')
-<div class="container mt-4" style="max-width: 600px;">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Detalle del Centro de formación #{{ $centro->id }}</h5>
-            <a href="{{ route('training_center.index') }}" class="btn btn-sm btn-light">Volver</a>
-        </div>
-        
-        {{-- Aquí estaba el detalle: agregamos el 'div' --}}
-        <div class="card-body">
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">ID:</label>
-                <p class="fs-5">{{ $centro->id }}</p>
+
+<div class="centros-page">
+
+    <div class="centro-detail-card">
+
+        <div class="centro-detail-header">
+
+            <div>
+
+                <span>INFORMACIÓN DEL CENTRO</span>
+
+                <h1>
+                    Detalle del <strong>centro.</strong>
+                </h1>
+
+                <p>
+                    Consulta la información registrada de este centro.
+                </p>
+
             </div>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Nombre del Centro:</label>
-                <p class="fs-5">{{ $centro->name }}</p>
-            </div>
+            <a
+                href="{{ route('training_center.index') }}"
+                class="centro-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Ubicación:</label>
-                <p class="fs-5">{{ $centro->location }}</p>
-            </div>
         </div>
 
-        <div class="card-footer text-end">
-            <a href="{{ route('training_center.index') }}" class="btn btn-secondary">Regresar a la lista</a>
+
+        <div class="centro-detail-grid">
+
+            <div class="centro-detail-item">
+
+                <span>ID</span>
+
+                <strong>
+                    #{{ $centro->id }}
+                </strong>
+
+            </div>
+
+
+            <div class="centro-detail-item">
+
+                <span>NOMBRE</span>
+
+                <strong>
+                    {{ $centro->name }}
+                </strong>
+
+            </div>
+
+
+            <div class="centro-detail-item">
+
+                <span>UBICACIÓN</span>
+
+                <strong>
+                    {{ $centro->location }}
+                </strong>
+
+            </div>
+
         </div>
+
+
+        <div class="centro-detail-actions">
+
+            <a
+                href="{{ route('training_center.edit', $centro->id) }}"
+                class="centros-button"
+            >
+                <i class="bi bi-pencil"></i>
+                Editar centro
+            </a>
+
+            <a
+                href="{{ route('training_center.index') }}"
+                class="centro-cancel"
+            >
+                Regresar
+            </a>
+
+        </div>
+
     </div>
+
 </div>
+
 @endsection

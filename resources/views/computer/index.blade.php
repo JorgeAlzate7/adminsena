@@ -1,76 +1,129 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/computadores.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="computadores-page">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="computadores-header">
 
-            <h1>COMPUTADORES</h1>
+        <div>
 
-            <a href="{{ route('computer.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Nuevo computador
-            </a>
+            <h1>
+                Computadores
+            </h1>
+
+            <p>
+                Administración de computadores registrados en el sistema.
+            </p>
 
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
+        <a
+            href="{{ route('computer.create') }}"
+            class="computadores-button"
+        >
+            <i class="bi bi-plus-circle"></i>
+            Nuevo computador
+        </a>
+
+    </div>
+
+
+    <div class="computadores-table-card">
+
+        <table>
 
             <thead>
+
                 <tr>
-                    <th>Número</th>
-                    <th>Marca</th>
-                    <th>Acciones</th>
+                    <th>NÚMERO</th>
+                    <th>MARCA</th>
+                    <th>ACCIONES</th>
                 </tr>
+
             </thead>
 
             <tbody>
 
-                @foreach ($computers as $computer)
+                @forelse ($computers as $computer)
 
                     <tr>
 
-                        <td>{{ $computer->number }}</td>
+                        <td>
+                            {{ $computer->number }}
+                        </td>
 
-                        <td>{{ $computer->brand }}</td>
+                        <td>
+                            {{ $computer->brand }}
+                        </td>
 
                         <td>
 
-                            <a href="{{ route('computer.show', $computer->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
+                            <div class="computadores-actions">
 
-                            <a href="{{ route('computer.edit', $computer->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
+                                <a
+                                    href="{{ route('computer.show', $computer->id) }}"
+                                    class="computer-action"
+                                >
+                                    <i class="bi bi-eye"></i>
+                                    Mostrar
+                                </a>
 
-                            <form action="{{ route('computer.destroy', $computer->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                                <a
+                                    href="{{ route('computer.edit', $computer->id) }}"
+                                    class="computer-action"
+                                >
+                                    <i class="bi bi-pencil"></i>
+                                    Editar
+                                </a>
 
-                                @csrf
-                                @method('DELETE')
+                                <form
+                                    action="{{ route('computer.destroy', $computer->id) }}"
+                                    method="POST"
+                                >
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este computador?')">
-                                    Eliminar
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
 
-                            </form>
+                                    <button
+                                        type="submit"
+                                        class="computer-action"
+                                        onclick="return confirm('¿Está seguro de eliminar este computador?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
 
                         </td>
 
                     </tr>
 
-                @endforeach
+                @empty
+
+                    <tr>
+
+                        <td colspan="3" class="computadores-empty">
+                            No hay computadores registrados.
+                        </td>
+
+                    </tr>
+
+                @endforelse
 
             </tbody>
 
         </table>
 
     </div>
+
+</div>
 
 @endsection

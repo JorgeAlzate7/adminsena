@@ -1,58 +1,108 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/centros.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="centros-page">
 
-        <h1>Editar Centro de Formación</h1>
+    <div class="centro-form-card">
 
-        <form action="{{ route('training_center.update', $training_center->id) }}"
-              method="POST">
+        <div class="centro-form-header">
+
+            <div>
+
+                <span>FORMACIÓN SENA</span>
+
+                <h1>
+                    Editar <strong>centro.</strong>
+                </h1>
+
+                <p>
+                    Actualiza la información del centro de formación.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ route('training_center.index') }}"
+                class="centro-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
+
+        </div>
+
+
+        <form
+            action="{{ route('training_center.update', $training_center->id) }}"
+            method="POST"
+        >
 
             @csrf
             @method('PUT')
 
-            <div class="mb-3">
 
-                <label for="name" class="form-label">
+            <div class="centro-form-group">
+
+                <label for="name">
                     Nombre
                 </label>
 
-                <input type="text"
-                       name="name"
-                       id="name"
-                       class="form-control"
-                       value="{{ $training_center->name }}"
-                       required>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="{{ old('name', $training_center->name) }}"
+                    required
+                >
 
             </div>
 
-            <div class="mb-3">
 
-                <label for="location" class="form-label">
+            <div class="centro-form-group">
+
+                <label for="location">
                     Ubicación
                 </label>
 
-                <input type="text"
-                       name="location"
-                       id="location"
-                       class="form-control"
-                       value="{{ $training_center->location }}"
-                       required>
+                <input
+                    type="text"
+                    name="location"
+                    id="location"
+                    value="{{ old('location', $training_center->location) }}"
+                    required
+                >
 
             </div>
 
-            <button type="submit" class="btn btn-success">
-                Actualizar
-            </button>
 
-            <a href="{{ route('training_center.index') }}"
-               class="btn btn-secondary">
-                Cancelar
-            </a>
+            <div class="centro-form-actions">
+
+                <a
+                    href="{{ route('training_center.index') }}"
+                    class="centro-cancel"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="centros-button"
+                >
+                    <i class="bi bi-check-lg"></i>
+                    Actualizar
+                </button>
+
+            </div>
 
         </form>
 
     </div>
+
+</div>
 
 @endsection

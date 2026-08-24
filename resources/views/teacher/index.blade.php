@@ -1,82 +1,131 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/profesores.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="profesores-page">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="profesores-header">
 
-            <h1>TEACHERS</h1>
+        <div>
+            <h1>Instructores</h1>
 
-            <a href="{{ route('teacher.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> NUEVOS INSTRUCTORES
-            </a>
-
+            <p>
+                Administración de instructores registrados en el sistema.
+            </p>
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
+        <a
+            href="{{ route('teacher.create') }}"
+            class="profesores-button"
+        >
+            <i class="bi bi-plus-circle"></i>
+            Nuevo instructor
+        </a>
+
+    </div>
+
+
+    <div class="profesores-table-card">
+
+        <table>
 
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Id de área</th>
-                    <th>Id centro</th>
-                    <th>Acciones</th>
+                    <th>NOMBRE</th>
+                    <th>CORREO</th>
+                    <th>ÁREA</th>
+                    <th>CENTRO</th>
+                    <th>ACCIONES</th>
                 </tr>
             </thead>
 
             <tbody>
 
-                @foreach ($teachers as $teacher)
+                @forelse ($teachers as $teacher)
 
                     <tr>
 
-                        <td>{{ $teacher->name }}</td>
+                        <td>
+                            {{ $teacher->name }}
+                        </td>
 
-                        <td>{{ $teacher->email }}</td>
+                        <td>
+                            {{ $teacher->email }}
+                        </td>
 
-                        <td>{{ $teacher->area_id }}</td>
+                        <td>
+                            {{ $teacher->area_id }}
+                        </td>
 
-                        <td>{{ $teacher->training_center_id }}</td>
+                        <td>
+                            {{ $teacher->training_center_id }}
+                        </td>
 
                         <td>
 
-                            <a href="{{ route('teacher.show', $teacher->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
+                            <div class="profesores-actions">
 
-                            <a href="{{ route('teacher.edit', $teacher->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
+                                <a
+                                    href="{{ route('teacher.show', $teacher->id) }}"
+                                    class="profesor-action"
+                                >
+                                    <i class="bi bi-eye"></i>
+                                    Mostrar
+                                </a>
 
-                            <form action="{{ route('teacher.destroy', $teacher->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                                <a
+                                    href="{{ route('teacher.edit', $teacher->id) }}"
+                                    class="profesor-action"
+                                >
+                                    <i class="bi bi-pencil"></i>
+                                    Editar
+                                </a>
 
-                                @csrf
-                                @method('DELETE')
+                                <form
+                                    action="{{ route('teacher.destroy', $teacher->id) }}"
+                                    method="POST"
+                                >
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este instructor?')">
-                                    Eliminar
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
 
-                            </form>
+                                    <button
+                                        type="submit"
+                                        class="profesor-action"
+                                        onclick="return confirm('¿Está seguro de eliminar este instructor?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
 
                         </td>
 
                     </tr>
 
-                @endforeach
+                @empty
+
+                    <tr>
+                        <td colspan="5" class="profesores-empty">
+                            No hay instructores registrados.
+                        </td>
+                    </tr>
+
+                @endforelse
 
             </tbody>
 
         </table>
 
     </div>
+
+</div>
 
 @endsection

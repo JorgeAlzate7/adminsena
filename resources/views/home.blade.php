@@ -1,187 +1,169 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+@endsection
+
 @section('content')
 
-<div class="container py-5">
+<div class="sena-home">
 
-    <div class="text-center mb-5">
+    {{-- HERO --}}
+    <section class="hero">
 
-        <h1 class="display-4 fw-bold">
-            Bienvenido a AdminSena
-        </h1>
+        <div class="hero-text">
 
-        <p class="lead">
-            Sistema de gestión del SENA
+            <span>ADMINSENA</span>
+
+            <h1>
+                Encuentra tu próxima
+                <strong>oportunidad.</strong>
+            </h1>
+
+            <p>
+                Explora nuestras ofertas de formación
+                y encuentra el programa ideal para ti.
+            </p>
+
+            <a href="{{ route('ofertas.index') }}" class="btn-sena">
+                Ver ofertas
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="hero-logo">
+            <img
+                src="{{ asset('image/logo-del-sena-01.png') }}"
+                alt="Logo SENA"
+                class="logo-sena"
+            >
+        </div>
+
+    </section>
+
+
+    {{-- OFERTAS --}}
+    <section class="section">
+
+        <div class="title">
+
+            <span>OFERTAS DE FORMACIÓN</span>
+
+            <h2>
+                Aprende algo <strong>nuevo.</strong>
+            </h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="bi bi-laptop"></i>
+
+                <h3>
+                    Tecnología
+                </h3>
+
+                <p>
+                    Encuentra programas relacionados
+                    con tecnología y desarrollo.
+                </p>
+
+                <a href="{{ route('ofertas.index') }}">
+                    Ver ofertas →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="bi bi-briefcase"></i>
+
+                <h3>
+                    Administración
+                </h3>
+
+                <p>
+                    Desarrolla habilidades para el
+                    mundo empresarial y laboral.
+                </p>
+
+                <a href="{{ route('ofertas.index') }}">
+                    Ver ofertas →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="bi bi-palette"></i>
+
+                <h3>
+                    Diseño
+                </h3>
+
+                <p>
+                    Aprende y desarrolla tu creatividad
+                    con diferentes programas.
+                </p>
+
+                <a href="{{ route('ofertas.index') }}">
+                    Ver ofertas →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {{-- QUIENES SOMOS --}}
+    <section id="quienes-somos" class="about">
+
+        <div>
+
+            <span>QUIÉNES SOMOS</span>
+
+            <h2>
+                Formación para
+                <strong>transformar.</strong>
+            </h2>
+
+        </div>
+
+        <p>
+            El Servicio Nacional de Aprendizaje SENA
+            brinda formación para el trabajo y busca
+            fortalecer las competencias de los
+            colombianos para generar nuevas
+            oportunidades.
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="row g-4">
+    {{-- FINAL --}}
+    <section class="final">
 
+        <span>SENA</span>
 
-        <!-- APRENDICES -->
+        <h2>
+            Tu futuro
+            <strong>comienza aquí.</strong>
+        </h2>
 
-        <div class="col-md-4">
+        <a href="{{ route('ofertas.index') }}" class="btn-sena">
+            Explorar ofertas
+            <i class="bi bi-arrow-right"></i>
+        </a>
 
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h2>Aprendices</h2>
-
-                    
-
-                    <p>
-                        Gestiona los aprendices registrados.
-                    </p>
-
-                    <a href="{{ route('aprendice.index') }}" class="mi-boton">
-                        Ver aprendices
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ÁREAS -->
-
-        <div class="col-md-4">
-
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h3>
-                         Áreas
-                    </h3>
-
-                    <p>
-                        Administra las áreas del sistema.
-                    </p>
-
-                    <a href="{{ route('area.index') }}" class="mi-boton">
-                        Ver áreas
-                     </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- COMPUTADORES -->
-
-        <div class="col-md-4">
-
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h2>
-                         Computadores
-                    </h2>
-
-                    <p>
-                        Gestiona los computadores.
-                    </p>
-
-                    <a href="{{ route('computer.index') }}" class="mi-boton">
-                        Ver computadores
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- CURSOS -->
-
-        <div class="col-md-4">
-
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h2>
-                         Cursos
-                    </h2>
-
-                    <p>
-                        Administra los cursos.
-                    </p>
-
-                    <a href="{{ route('course.index') }}" class="mi-boton">
-                     Ver cursos
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROFESORES -->
-
-        <div class="col-md-4">
-
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h2>
-                        Instructores
-                    </h2>
-
-                    <p>
-                        Gestiona los profesores.
-                    </p>
-
-                    <a href="{{ route('teacher.index') }}" class="mi-boton">
-                         Ver profesores
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- CENTROS -->
-
-        <div class="col-md-4">
-
-            <div class="card shadow h-100">
-
-                <div class="card-body text-center">
-
-                    <h2>
-                         Centros de formación
-                    </h2>
-
-                    <p>
-                        Gestiona los centros de formación.
-                    </p>
-
-                    <a href="{{ route('training_center.index') }}" class="mi-boton">
-                        Ver centros
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+    </section>
 
 </div>
 

@@ -1,0 +1,378 @@
+/* =========================
+   GENERAL
+========================= */
+
+.computadores-page {
+    min-height: 70vh;
+    padding: 60px 7%;
+    background: #f7f7f8;
+}
+
+
+/* =========================
+   ENCABEZADOS
+========================= */
+
+.computadores-header,
+.computador-form-header,
+.computer-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.computadores-header h1,
+.computador-form-header h1,
+.computer-detail-header h1 {
+    margin: 0 0 8px;
+    color: #111;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.computadores-header p,
+.computador-form-header p,
+.computer-detail-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.computador-form-header span,
+.computer-detail-header span {
+    color: #39A900;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.computador-form-header h1 strong,
+.computer-detail-header h1 strong {
+    color: #39A900;
+}
+
+
+/* =========================
+   BOTÓN VERDE
+========================= */
+
+.computadores-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.computadores-button:hover {
+    background: #2f8f00;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   INDEX - TABLA
+========================= */
+
+.computadores-table-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.computadores-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.computadores-table-card th {
+    padding: 18px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    font-size: 11px;
+    text-align: left;
+    letter-spacing: .8px;
+}
+
+.computadores-table-card td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+    font-size: 14px;
+}
+
+.computadores-table-card tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* =========================
+   ACCIONES
+========================= */
+
+.computadores-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.computadores-actions form {
+    margin: 0;
+}
+
+.computer-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    background: #39A900;
+    color: white;
+
+    border: 0;
+    border-radius: 7px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.computer-action:hover {
+    background: #2f8f00;
+    color: white;
+}
+
+
+/* =========================
+   CREATE / EDIT
+========================= */
+
+.computador-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.computer-form-group {
+    margin-bottom: 22px;
+}
+
+.computer-form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.computer-form-group input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    background: #fafafa;
+    color: #222;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: .2s;
+}
+
+.computer-form-group input:focus {
+    border-color: #39A900;
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(57,169,0,.10);
+}
+
+.computer-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* BOTÓN CANCELAR */
+
+.computer-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px 17px;
+
+    background: white;
+    color: #555;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.computer-cancel:hover {
+    background: #f3f3f3;
+    color: #222;
+}
+
+
+/* =========================
+   SHOW
+========================= */
+
+.computer-detail-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.computer-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.computer-detail-item {
+    padding: 22px;
+
+    background: #f7f7f8;
+    border-radius: 12px;
+}
+
+.computer-detail-item span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.computer-detail-item strong {
+    color: #111;
+    font-size: 20px;
+}
+
+.computer-detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   VACÍO
+========================= */
+
+.computadores-empty {
+    padding: 40px !important;
+    text-align: center;
+
+    color: #777 !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .computadores-page {
+        padding: 40px 20px;
+    }
+
+    .computadores-header,
+    .computador-form-header,
+    .computer-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .computadores-header h1,
+    .computador-form-header h1,
+    .computer-detail-header h1 {
+        font-size: 32px;
+    }
+
+    .computadores-button {
+        width: 100%;
+    }
+
+    .computadores-table-card {
+        overflow-x: auto;
+    }
+
+    .computadores-actions {
+        flex-wrap: wrap;
+    }
+
+    .computer-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .computer-form-actions,
+    .computer-detail-actions {
+        flex-direction: column;
+    }
+
+    .computer-cancel {
+        width: 100%;
+    }
+}

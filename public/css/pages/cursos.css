@@ -1,0 +1,365 @@
+.cursos-page {
+    min-height: 70vh;
+    padding: 60px 7%;
+    background: #f7f7f8;
+}
+
+
+/* ENCABEZADOS */
+
+.cursos-header,
+.curso-form-header,
+.curso-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.cursos-header h1,
+.curso-form-header h1,
+.curso-detail-header h1 {
+    margin: 0 0 8px;
+    color: #111;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.cursos-header p,
+.curso-form-header p,
+.curso-detail-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.curso-form-header span,
+.curso-detail-header span {
+    color: #39A900;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.curso-form-header h1 strong,
+.curso-detail-header h1 strong {
+    color: #39A900;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.cursos-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cursos-button:hover {
+    background: #2f8f00;
+    color: white;
+    transform: translateY(-1px);
+}
+
+
+/* TABLA */
+
+.cursos-table-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.cursos-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cursos-table-card th {
+    padding: 18px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: .8px;
+}
+
+.cursos-table-card td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+    font-size: 14px;
+}
+
+.cursos-table-card tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* ACCIONES */
+
+.cursos-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cursos-actions form {
+    margin: 0;
+}
+
+.curso-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.curso-action:hover {
+    background: #2f8f00;
+    color: white;
+}
+
+
+/* FORMULARIO */
+
+.curso-form-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.curso-form-group {
+    margin-bottom: 22px;
+}
+
+.curso-form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.curso-form-group input,
+.curso-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    background: #fafafa;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    color: #222;
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.curso-form-group input:focus,
+.curso-form-group select:focus {
+    background: white;
+    border-color: #39A900;
+
+    box-shadow: 0 0 0 3px rgba(57,169,0,.10);
+}
+
+
+/* BOTONES DEL FORMULARIO */
+
+.curso-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.curso-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px 17px;
+
+    background: white;
+    color: #555;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.curso-cancel:hover {
+    background: #f3f3f3;
+    color: #222;
+}
+
+
+/* DETALLE */
+
+.curso-detail-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.curso-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.curso-detail-item {
+    padding: 22px;
+
+    background: #f7f7f8;
+    border-radius: 12px;
+}
+
+.curso-detail-item span {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.curso-detail-item strong {
+    color: #111;
+    font-size: 18px;
+}
+
+.curso-detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* VACÍO */
+
+.cursos-empty {
+    padding: 40px !important;
+    text-align: center;
+
+    color: #777 !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .cursos-page {
+        padding: 40px 20px;
+    }
+
+    .cursos-header,
+    .curso-form-header,
+    .curso-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .cursos-header h1,
+    .curso-form-header h1,
+    .curso-detail-header h1 {
+        font-size: 32px;
+    }
+
+    .cursos-button {
+        width: 100%;
+    }
+
+    .cursos-table-card {
+        overflow-x: auto;
+    }
+
+    .cursos-actions {
+        flex-wrap: wrap;
+    }
+
+    .curso-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .curso-form-actions,
+    .curso-detail-actions {
+        flex-direction: column;
+    }
+
+    .curso-cancel {
+        width: 100%;
+    }
+}

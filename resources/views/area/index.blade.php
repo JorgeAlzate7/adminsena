@@ -1,25 +1,38 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/areas.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="areas-page">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="areas-header">
 
-            <h1>AREAS DE FORMACION</h1>
+        <div>
+            <h1>Áreas de formación</h1>
 
-            <a href="{{ route('areas.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Nueva Area
-            </a>
-
+            <p>
+                Administración de las áreas de formación registradas.
+            </p>
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
+        <a href="{{ route('areas.create') }}" class="areas-button">
+            <i class="bi bi-plus-circle"></i>
+            Nueva área
+        </a>
+
+    </div>
+
+    <div class="areas-table-card">
+
+        <table>
 
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Acciones</th>
+                    <th>NOMBRE</th>
+                    <th>ACCIONES</th>
                 </tr>
             </thead>
 
@@ -29,34 +42,50 @@
 
                     <tr>
 
-                        <td>{{ $area->name }}</td>
+                        <td>
+                            {{ $area->name }}
+                        </td>
 
                         <td>
 
-                            <a href="{{ route('area.show', $area->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
+                            <div class="areas-actions">
 
-                            <a href="{{ route('area.edit', $area->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
+                                <a
+                                    href="{{ route('area.show', $area->id) }}"
+                                    class="area-action"
+                                >
+                                    <i class="bi bi-eye"></i>
+                                    Mostrar
+                                </a>
 
-                            <form action="{{ route('area.destroy', $area->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                                <a
+                                    href="{{ route('area.edit', $area->id) }}"
+                                    class="area-action"
+                                >
+                                    <i class="bi bi-pencil"></i>
+                                    Editar
+                                </a>
 
-                                @csrf
-                                @method('DELETE')
+                                <form
+                                    action="{{ route('area.destroy', $area->id) }}"
+                                    method="POST"
+                                >
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar esta área?')">
-                                    Eliminar
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
 
-                            </form>
+                                    <button
+                                        type="submit"
+                                        class="area-action"
+                                        onclick="return confirm('¿Está seguro de eliminar esta área?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
 
                         </td>
 
@@ -69,5 +98,7 @@
         </table>
 
     </div>
+
+</div>
 
 @endsection

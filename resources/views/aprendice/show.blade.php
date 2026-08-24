@@ -1,63 +1,168 @@
 @extends('layouts.app')
 
 @section('css')
-
-<link
-    rel="stylesheet"
-    href="{{ asset('css/pages/aprendice.css') }}"
->
-
+<link rel="stylesheet" href="{{ asset('css/pages/aprendice.css') }}">
 @endsection
 
 @section('content')
 
-<link
-    rel="stylesheet"
-    href="{{ asset('css/pages/aprendice.css') }}"
->
+<div class="aprendice-page">
 
-<div class="container aprendice-page">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Detalle del Aprendiz #{{ $aprendiz->id }}</h5>
-            <a href="{{ route('aprendice.index') }}" class="btn btn-sm btn-light">Volver</a>
-        </div>
-        
-        <div class="card-body">
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">ID:</label>
-                <p class="fs-5">{{ $aprendiz->id }}</p>
+    <div class="aprendice-detail-card">
+
+        <div class="aprendice-header">
+
+            <div>
+
+                <span class="aprendice-subtitle">
+                    INFORMACIÓN DEL APRENDIZ
+                </span>
+
+                <h1>
+                    Detalle del <strong>aprendiz.</strong>
+                </h1>
+
+                <p>
+                    Consulta la información registrada de este aprendiz.
+                </p>
+
             </div>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Nombre del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->name }}</p>
-            </div>
+            
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Correo del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->email }}</p>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Numero del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->cell_number }}</p>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Curso del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz-> course-> course_number ?? 'sin curso' }} - {{ $aprendiz->course->day ?? '' }}</p>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Computador del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->computer->brand ?? 'sin computador'}}</p>
-            </div>
         </div>
 
-        <div class="card-footer text-end">
-            <a href="{{ route('area.index') }}" class="btn btn-secondary">Regresar a la lista</a>
+
+        <div class="aprendice-detail-profile">
+
+            <div class="aprendice-detail-avatar">
+                {{ strtoupper(substr($aprendiz->name, 0, 1)) }}
+            </div>
+
+            <div>
+
+                <h2>
+                    {{ $aprendiz->name }}
+                </h2>
+
+                <p>
+                    Aprendiz SENA
+                </p>
+
+            </div>
+
         </div>
+
+
+        <div class="aprendice-detail-grid">
+
+            <div class="aprendice-detail-item">
+
+                <div class="aprendice-detail-icon">
+                    <i class="bi bi-hash"></i>
+                </div>
+
+                <div>
+                    <span>ID</span>
+                    <strong>#{{ $aprendiz->id }}</strong>
+                </div>
+
+            </div>
+
+
+            <div class="aprendice-detail-item">
+
+                <div class="aprendice-detail-icon">
+                    <i class="bi bi-envelope"></i>
+                </div>
+
+                <div>
+                    <span>Correo electrónico</span>
+                    <strong>{{ $aprendiz->email }}</strong>
+                </div>
+
+            </div>
+
+
+            <div class="aprendice-detail-item">
+
+                <div class="aprendice-detail-icon">
+                    <i class="bi bi-telephone"></i>
+                </div>
+
+                <div>
+                    <span>Número celular</span>
+                    <strong>{{ $aprendiz->cell_number }}</strong>
+                </div>
+
+            </div>
+
+
+            <div class="aprendice-detail-item">
+
+                <div class="aprendice-detail-icon">
+                    <i class="bi bi-mortarboard"></i>
+                </div>
+
+                <div>
+                    <span>Curso</span>
+
+                    <strong>
+                        {{ $aprendiz->course->course_number ?? 'Sin curso' }}
+                    </strong>
+
+                    @if($aprendiz->course)
+                        <small>
+                            {{ $aprendiz->course->day ?? '' }}
+                        </small>
+                    @endif
+
+                </div>
+
+            </div>
+
+
+            <div class="aprendice-detail-item">
+
+                <div class="aprendice-detail-icon">
+                    <i class="bi bi-pc-display"></i>
+                </div>
+
+                <div>
+                    <span>Computador</span>
+
+                    <strong>
+                        {{ $aprendiz->computer->number ?? 'Sin computador' }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="aprendice-detail-actions">
+
+            <a
+                href="{{ route('aprendice.edit', $aprendiz->id) }}"
+                class="aprendice-btn-save"
+            >
+                <i class="bi bi-pencil"></i>
+                Editar aprendiz
+            </a>
+
+            <a
+                href="{{ route('aprendice.index') }}"
+                class="aprendice-btn-cancel"
+            >
+                Regresar
+            </a>
+
+        </div>
+
     </div>
+
 </div>
+
 @endsection

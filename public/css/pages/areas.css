@@ -1,0 +1,544 @@
+/* =========================================================
+   ÁREAS
+========================================================= */
+
+.area-page,
+.areas-page {
+    min-height: 70vh;
+    padding: 60px 7%;
+    background: #f7f7f8;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.areas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.areas-header h1 {
+    margin: 0 0 8px;
+
+    color: #111;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.areas-header p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.area-subtitle {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #39A900;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   TARJETA FORMULARIO / DETALLE
+========================================================= */
+
+.area-card {
+    max-width: 850px;
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.area-card h1 {
+    margin: 0 0 8px;
+
+    color: #111;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.area-card h1 strong {
+    color: #39A900;
+}
+
+
+.area-description {
+    margin: 0 0 30px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    background: #fafafa;
+
+    border: 1px solid #ddd;
+    border-radius: 9px;
+
+    color: #222;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    background: white;
+
+    border-color: #39A900;
+
+    box-shadow:
+        0 0 0 3px rgba(57,169,0,.10);
+}
+
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+
+/* =========================================================
+   ERRORES
+========================================================= */
+
+.error {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #dc3545;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.area-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 18px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.area-button:hover {
+    background: #2f8f00;
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BOTÓN CANCELAR
+========================================================= */
+
+.area-cancel {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 12px 17px;
+
+    background: white;
+    color: #555;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.area-cancel:hover {
+    background: #f3f3f3;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   BOTONES EDITAR
+========================================================= */
+
+.area-edit-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.areas-table-card {
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+
+.areas-table-card table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+.areas-table-card th {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #ddd;
+
+    color: #555;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: left;
+
+    letter-spacing: .8px;
+}
+
+
+.areas-table-card td {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #222;
+
+    font-size: 14px;
+}
+
+
+.areas-table-card tbody tr:hover {
+    background: #fafafa;
+}
+
+
+.areas-table-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.areas-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.areas-actions form {
+    margin: 0;
+}
+
+
+.area-action {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 9px 13px;
+
+    background: #39A900;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.area-action:hover {
+    background: #2f8f00;
+
+    color: white;
+}
+
+
+/* =========================================================
+   HEADER DEL DETALLE
+========================================================= */
+
+.show-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL DETALLE
+========================================================= */
+
+.show-info {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.show-item {
+    padding: 20px;
+
+    background: #f7f7f8;
+
+    border-radius: 12px;
+}
+
+
+.show-item span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .7px;
+}
+
+
+.show-item strong {
+    color: #111;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   BOTONES DEL DETALLE
+========================================================= */
+
+.show-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .area-page,
+    .areas-page {
+        padding: 40px 20px;
+    }
+
+
+    .areas-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .areas-header h1 {
+        font-size: 32px;
+    }
+
+
+    .areas-button {
+        width: 100%;
+    }
+
+
+    .area-card {
+        padding: 30px 25px;
+    }
+
+
+    .area-card h1 {
+        font-size: 32px;
+    }
+
+
+    .show-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .show-header .area-cancel {
+        width: 100%;
+    }
+
+
+    .show-info {
+        grid-template-columns: 1fr;
+    }
+
+
+    .areas-table-card {
+        overflow-x: auto;
+    }
+
+
+    .areas-actions {
+        flex-wrap: wrap;
+    }
+
+
+    .area-edit-buttons,
+    .show-actions {
+        flex-direction: column;
+    }
+
+
+    .area-edit-buttons .area-button,
+    .area-edit-buttons .area-cancel,
+    .show-actions .area-button,
+    .show-actions .area-cancel {
+        width: 100%;
+    }
+
+}

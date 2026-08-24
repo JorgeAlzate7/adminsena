@@ -1,41 +1,82 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/areas.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="area-page">
 
-        <h1>Editar Área</h1>
+    <div class="area-card">
 
-        <form action="{{ route('area.update', $area->id) }}" method="POST">
+        <span class="area-subtitle">
+            ÁREAS DE FORMACIÓN
+        </span>
+
+        <h1>
+            Editar <strong>área</strong>
+        </h1>
+
+        <p class="area-description">
+            Actualiza el nombre del área de formación.
+        </p>
+
+        <form
+            action="{{ route('area.update', $area->id) }}"
+            method="POST"
+        >
 
             @csrf
             @method('PUT')
 
-            <div class="mb-3">
+            <div class="form-group">
 
-                <label for="name" class="form-label">
-                    Nombre
+                <label for="name">
+                    Nombre del área
                 </label>
 
-                <input type="text"
-                       name="name"
-                       id="name"
-                       class="form-control"
-                       value="{{ $area->name }}"
-                       required>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="{{ old('name', $area->name) }}"
+                    placeholder="Ejemplo: Tecnología"
+                    required
+                >
+
+                @error('name')
+                    <small class="error">
+                        {{ $message }}
+                    </small>
+                @enderror
 
             </div>
 
-            <button type="submit" class="btn btn-success">
-                Actualizar
-            </button>
+            <div class="area-edit-buttons">
 
-            <a href="{{ route('area.index') }}" class="btn btn-secondary">
-                Cancelar
-            </a>
+                <a
+                    href="{{ route('area.index') }}"
+                    class="area-cancel"
+                >
+                    <i class="bi bi-arrow-left"></i>
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="area-button"
+                >
+                    Actualizar
+                    <i class="bi bi-check-lg"></i>
+                </button>
+
+            </div>
 
         </form>
 
     </div>
+
+</div>
 
 @endsection

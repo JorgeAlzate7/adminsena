@@ -1,24 +1,73 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/areas.css') }}">
+@endsection
+
 @section('content')
 
-<h1>formulario area</h1>
+<div class="area-page">
 
-<form action="{{route('area.store')}}" method="POST" enctype="multipart/form-data">
+    <div class="area-card">
 
-@csrf
+        <span class="area-subtitle">
+            ADMINISTRACIÓN
+        </span>
 
-<label>
-    Nombre:
-    <br>
-    <input type="text" name="name">
-</label>
-<br>
-<br>
+        <h1>
+            Crear <strong>área</strong>
+        </h1>
+
+        <p class="area-description">
+            Registra una nueva área para organizar
+            las ofertas de formación.
+        </p>
 
 
-<button type="submit">Enviar Formulario:</button>
-</form>
+        <form
+            action="{{ route('area.store') }}"
+            method="POST"
+            enctype="multipart/form-data"
+        >
 
+            @csrf
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nombre del área
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Ej: Tecnología"
+                    value="{{ old('name') }}"
+                    required
+                >
+
+                @error('name')
+                    <small class="error">
+                        {{ $message }}
+                    </small>
+                @enderror
+
+            </div>
+
+
+            <button type="submit" class="area-button">
+
+                Crear área
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 @endsection

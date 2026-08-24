@@ -55,6 +55,20 @@
                 </li>
 
 
+                <!-- OFERTAS -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{{ route('ofertas.index') }}"
+                    >
+                        Ofertas
+                    </a>
+
+                </li>
+
+
                 <!-- QUIENES SOMOS -->
 
                 <li class="nav-item">

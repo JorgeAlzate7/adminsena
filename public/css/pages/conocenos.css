@@ -1,0 +1,140 @@
+.conocenos-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* ENCABEZADO */
+
+.conocenos-header {
+    margin-bottom: 45px;
+}
+
+.conocenos-header span {
+    color: #39A900;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.conocenos-header h1 {
+    margin: 10px 0;
+    color: #222;
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.conocenos-header h1 strong {
+    color: #39A900;
+}
+
+.conocenos-header p {
+    max-width: 650px;
+    color: #777;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* TARJETAS */
+
+.conocenos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.conocenos-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
+    transition: .3s ease;
+}
+
+.conocenos-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .09);
+}
+
+.conocenos-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #eaf7e4;
+    color: #39A900;
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.conocenos-card h2 {
+    color: #222;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.conocenos-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* INFORMACIÓN */
+
+.conocenos-info {
+    margin-top: 30px;
+    padding: 25px 30px;
+    background: #39A900;
+    color: white;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.conocenos-info > i {
+    font-size: 35px;
+}
+
+.conocenos-info h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.conocenos-info p {
+    margin: 0;
+    opacity: .9;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .conocenos-page {
+        padding: 40px 15px;
+    }
+
+    .conocenos-header h1 {
+        font-size: 32px;
+    }
+
+    .conocenos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conocenos-card {
+        padding: 28px;
+    }
+
+    .conocenos-info {
+        align-items: flex-start;
+    }
+
+}

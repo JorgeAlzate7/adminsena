@@ -1,147 +1,123 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/contacto.css') }}">
+@endsection
+
 @section('content')
 
-<div class="container py-5">
+<div class="contacto-page">
 
-    <div class="contacto-header text-center mb-5">
+    <div class="contacto-header">
+        <span>ATENCIÓN SENA</span>
 
-        <h1>Contacto</h1>
+        <h1>
+            Estamos para <strong>ayudarte.</strong>
+        </h1>
 
         <p>
-            ¿Tienes alguna pregunta? Puedes comunicarte con nosotros
+            ¿Tienes alguna pregunta? Comunícate con nosotros
             a través de los siguientes medios.
         </p>
-
     </div>
 
-
-    <div class="row justify-content-center g-4">
+    <div class="contacto-grid">
 
         <!-- INFORMACIÓN -->
-        <div class="col-md-5">
+        <div class="contacto-card">
 
-            <div class="contacto-card">
-
-                <h3>Información de contacto</h3>
-
-                <div class="contacto-dato">
-
-                    <i class="bi bi-geo-alt-fill"></i>
-
-                    <div>
-                        <strong>Ubicación</strong>
-                        <p>Centro de Formación SENA</p>
-                    </div>
-
+            <div class="contacto-card-title">
+                <div class="contacto-icon">
+                    <i class="bi bi-info-circle"></i>
                 </div>
 
+                <h2>Información de contacto</h2>
+            </div>
 
-                <div class="contacto-dato">
+            <div class="contacto-dato">
+                <i class="bi bi-geo-alt-fill"></i>
 
-                    <i class="bi bi-telephone-fill"></i>
-
-                    <div>
-                        <strong>Teléfono</strong>
-                        <p>+57 601 546 1500</p>
-                    </div>
-
+                <div>
+                    <strong>Ubicación</strong>
+                    <p>Centro de Formación SENA</p>
                 </div>
+            </div>
 
+            <div class="contacto-dato">
+                <i class="bi bi-telephone-fill"></i>
 
-                <div class="contacto-dato">
-
-                    <i class="bi bi-envelope-fill"></i>
-
-                    <div>
-                        <strong>Correo</strong>
-                        <p>contacto@adminSena.com</p>
-                    </div>
-
+                <div>
+                    <strong>Teléfono</strong>
+                    <p>+57 601 546 1500</p>
                 </div>
+            </div>
 
+            <div class="contacto-dato">
+                <i class="bi bi-envelope-fill"></i>
 
-                <div class="contacto-dato">
-
-                    <i class="bi bi-clock-fill"></i>
-
-                    <div>
-                        <strong>Horario</strong>
-                        <p>Lunes a viernes de 8:00 AM a 5:00 PM</p>
-                    </div>
-
+                <div>
+                    <strong>Correo</strong>
+                    <p>contacto@adminSena.com</p>
                 </div>
+            </div>
 
+            <div class="contacto-dato">
+                <i class="bi bi-clock-fill"></i>
+
+                <div>
+                    <strong>Horario</strong>
+                    <p>Lunes a viernes de 8:00 AM a 5:00 PM</p>
+                </div>
             </div>
 
         </div>
 
-
         <!-- FORMULARIO -->
-        <div class="col-md-7">
+        <div class="contacto-card">
 
-            <div class="contacto-card">
+            <div class="contacto-card-title">
+                <div class="contacto-icon">
+                    <i class="bi bi-chat-dots"></i>
+                </div>
 
-                <h3>Envíanos un mensaje</h3>
-
-                <form>
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Nombre
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Escribe tu nombre"
-                        >
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Correo electrónico
-                        </label>
-
-                        <input
-                            type="email"
-                            class="form-control"
-                            placeholder="correo@ejemplo.com"
-                        >
-
-                    </div>
-
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Mensaje
-                        </label>
-
-                        <textarea
-                            class="form-control"
-                            rows="5"
-                            placeholder="Escribe tu mensaje"
-                        ></textarea>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-contacto"
-                    >
-                        <i class="bi bi-send-fill"></i>
-                        Enviar mensaje
-                    </button>
-
-                </form>
-
+                <h2>Envíanos un mensaje</h2>
             </div>
+
+            <form>
+
+                <div class="contacto-input">
+                    <label>Nombre</label>
+
+                    <input
+                        type="text"
+                        placeholder="Escribe tu nombre"
+                    >
+                </div>
+
+                <div class="contacto-input">
+                    <label>Correo electrónico</label>
+
+                    <input
+                        type="email"
+                        placeholder="correo@ejemplo.com"
+                    >
+                </div>
+
+                <div class="contacto-input">
+                    <label>Mensaje</label>
+
+                    <textarea
+                        rows="5"
+                        placeholder="Escribe tu mensaje"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="contacto-button">
+                    <i class="bi bi-send-fill"></i>
+                    Enviar mensaje
+                </button>
+
+            </form>
 
         </div>
 

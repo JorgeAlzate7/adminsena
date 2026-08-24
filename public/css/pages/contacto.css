@@ -1,0 +1,169 @@
+.contacto-page {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 55px 20px;
+}
+
+.contacto-header {
+    margin-bottom: 45px;
+}
+
+.contacto-header span {
+    color: #39A900;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.contacto-header h1 {
+    margin: 10px 0;
+    font-size: 42px;
+    font-weight: 700;
+    color: #222;
+}
+
+.contacto-header h1 strong {
+    color: #39A900;
+}
+
+.contacto-header p {
+    color: #777;
+    font-size: 16px;
+    max-width: 600px;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 25px;
+}
+
+.contacto-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.contacto-card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.contacto-card-title h2 {
+    margin: 0;
+    font-size: 21px;
+    color: #222;
+}
+
+.contacto-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eef8e9;
+    color: #39A900;
+    font-size: 20px;
+}
+
+.contacto-dato {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 17px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.contacto-dato:last-child {
+    border-bottom: none;
+}
+
+.contacto-dato > i {
+    color: #39A900;
+    font-size: 19px;
+    margin-top: 3px;
+}
+
+.contacto-dato strong {
+    color: #333;
+    font-size: 15px;
+}
+
+.contacto-dato p {
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.contacto-input {
+    margin-bottom: 18px;
+}
+
+.contacto-input label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contacto-input input,
+.contacto-input textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.contacto-input input:focus,
+.contacto-input textarea:focus {
+    border-color: #39A900;
+    box-shadow: 0 0 0 3px rgba(57,169,0,.1);
+}
+
+.contacto-input textarea {
+    resize: vertical;
+}
+
+.contacto-button {
+    border: none;
+    background: #39A900;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.contacto-button:hover {
+    background: #2f8e00;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+
+    .contacto-page {
+        padding: 35px 15px;
+    }
+
+    .contacto-header h1 {
+        font-size: 32px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-card {
+        padding: 22px;
+    }
+}

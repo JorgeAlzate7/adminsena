@@ -1,33 +1,100 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/computadores.css') }}">
+@endsection
+
 @section('content')
-<div class="container mt-4" style="max-width: 600px;">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Detalle del Computador #{{ $computer->id }}</h5>
-            <a href="{{ route('computer.index') }}" class="btn btn-sm btn-light">Volver</a>
-        </div>
-        
-        <div class="card-body">
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">ID:</label>
-                <p class="fs-5">{{ $computer->id }}</p>
+
+<div class="computadores-page">
+
+    <div class="computer-detail-card">
+
+        <div class="computer-detail-header">
+
+            <div>
+
+                <span>INFORMACIÓN DEL EQUIPO</span>
+
+                <h1>
+                    Detalle del <strong>computador.</strong>
+                </h1>
+
+                <p>
+                    Consulta la información registrada del equipo.
+                </p>
+
             </div>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Numero del Computador:</label>
-                <p class="fs-5">{{ $computer->number }}</p>
-            </div>
+            <a
+                href="{{ route('computer.index') }}"
+                class="computer-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
 
-            <div class="mb-3">
-                <label class="form-label text-muted fw-bold">Marca:</label>
-                <p class="fs-5">{{ $computer->brand }}</p>
-            </div>
         </div>
 
-        <div class="card-footer text-end">
-            <a href="{{ route('computer.index') }}" class="btn btn-secondary">Regresar a la lista</a>
+
+        <div class="computer-detail-grid">
+
+            <div class="computer-detail-item">
+
+                <span>ID</span>
+
+                <strong>
+                    #{{ $computer->id }}
+                </strong>
+
+            </div>
+
+
+            <div class="computer-detail-item">
+
+                <span>NÚMERO DEL COMPUTADOR</span>
+
+                <strong>
+                    {{ $computer->number }}
+                </strong>
+
+            </div>
+
+
+            <div class="computer-detail-item">
+
+                <span>MARCA</span>
+
+                <strong>
+                    {{ $computer->brand }}
+                </strong>
+
+            </div>
+
         </div>
+
+
+        <div class="computer-detail-actions">
+
+            <a
+                href="{{ route('computer.edit', $computer->id) }}"
+                class="computadores-button"
+            >
+                <i class="bi bi-pencil"></i>
+                Editar computador
+            </a>
+
+            <a
+                href="{{ route('computer.index') }}"
+                class="computer-cancel"
+            >
+                Regresar a la lista
+            </a>
+
+        </div>
+
     </div>
+
 </div>
+
 @endsection

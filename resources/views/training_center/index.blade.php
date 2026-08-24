@@ -1,76 +1,121 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/centros.css') }}">
+@endsection
+
 @section('content')
 
-    <div class="container">
+<div class="centros-page">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="centros-header">
 
-            <h1>CENTROS DE FORMACION</h1>
+        <div>
+            <h1>Centros de formación</h1>
 
-            <a href="{{ route('training_center.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> NUEVO CENTRO
-            </a>
-
+            <p>
+                Administración de los centros de formación registrados.
+            </p>
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
+        <a
+            href="{{ route('training_center.create') }}"
+            class="centros-button"
+        >
+            <i class="bi bi-plus-circle"></i>
+            Nuevo centro
+        </a>
+
+    </div>
+
+
+    <div class="centros-table-card">
+
+        <table>
 
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Ubicación</th>
-                    <th>Acciones</th>
+                    <th>NOMBRE</th>
+                    <th>UBICACIÓN</th>
+                    <th>ACCIONES</th>
                 </tr>
             </thead>
 
             <tbody>
 
-                @foreach ($training_centers as $training_center)
+                @forelse ($training_centers as $training_center)
 
                     <tr>
 
-                        <td>{{ $training_center->name }}</td>
+                        <td>
+                            {{ $training_center->name }}
+                        </td>
 
-                        <td>{{ $training_center->location }}</td>
+                        <td>
+                            {{ $training_center->location }}
+                        </td>
 
                         <td>
 
-                            <a href="{{ route('training_center.show', $training_center->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
+                            <div class="centros-actions">
 
-                            <a href="{{ route('training_center.edit', $training_center->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
+                                <a
+                                    href="{{ route('training_center.show', $training_center->id) }}"
+                                    class="centro-action"
+                                >
+                                    <i class="bi bi-eye"></i>
+                                    Mostrar
+                                </a>
 
-                            <form action="{{ route('training_center.destroy', $training_center->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
+                                <a
+                                    href="{{ route('training_center.edit', $training_center->id) }}"
+                                    class="centro-action"
+                                >
+                                    <i class="bi bi-pencil"></i>
+                                    Editar
+                                </a>
 
-                                @csrf
-                                @method('DELETE')
+                                <form
+                                    action="{{ route('training_center.destroy', $training_center->id) }}"
+                                    method="POST"
+                                >
 
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este centro de formación?')">
-                                    Eliminar
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
 
-                            </form>
+                                    <button
+                                        type="submit"
+                                        class="centro-action"
+                                        onclick="return confirm('¿Está seguro de eliminar este centro de formación?')"
+                                    >
+                                        <i class="bi bi-trash"></i>
+                                        Eliminar
+                                    </button>
+
+                                </form>
+
+                            </div>
 
                         </td>
 
                     </tr>
 
-                @endforeach
+                @empty
+
+                    <tr>
+                        <td colspan="3" class="centros-empty">
+                            No hay centros de formación registrados.
+                        </td>
+                    </tr>
+
+                @endforelse
 
             </tbody>
 
         </table>
 
     </div>
+
+</div>
 
 @endsection

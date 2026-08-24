@@ -1,0 +1,581 @@
+/* =====================================================
+   HOME - ADMINSENA
+===================================================== */
+
+.sena-home {
+    background: #f5f5f5;
+    color: #1d1d1f;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 600px;
+
+    padding: 75px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            #e5f6dc,
+            #ffffff 45%,
+            #f5f5f5 80%
+        );
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.hero-text > span {
+    color: #39A900;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.hero-text h1 {
+    margin: 20px 0;
+
+    font-size: clamp(48px, 6vw, 78px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    font-weight: 700;
+}
+
+.hero-text h1 strong {
+    display: inline;
+
+    color: #39A900;
+}
+
+.hero-text p {
+    max-width: 560px;
+
+    color: #6e6e73;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   BOTÓN PRINCIPAL
+===================================================== */
+
+.btn-sena {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    background: #39A900;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: all .25s ease;
+}
+
+.btn-sena:hover {
+    background: #2f8d00;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(57, 169, 0, .25);
+}
+
+.btn-sena i {
+    transition: transform .25s ease;
+}
+
+.btn-sena:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   LOGO DEL HOME
+===================================================== */
+
+.hero-logo {
+    width: 230px;
+    height: 230px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 60px rgba(57, 169, 0, .22);
+}
+
+.hero-logo .logo-sena {
+    width: 145px !important;
+
+    height: auto !important;
+
+    max-width: 65%;
+    max-height: 145px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.section {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 120px 30px;
+}
+
+.title {
+    margin-bottom: 45px;
+}
+
+.title > span {
+    color: #39A900;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.title h2 {
+    max-width: 700px;
+
+    margin-top: 15px;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+.title h2 strong {
+    color: #39A900;
+}
+
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    min-height: 350px;
+
+    padding: 35px;
+
+    background: white;
+
+    border: none;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .06);
+
+    transition: all .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .10);
+}
+
+.card > i {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #e7f7df;
+
+    color: #39A900;
+
+    font-size: 28px;
+}
+
+.card h3 {
+    margin-top: 45px;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+}
+
+.card p {
+    color: #6e6e73;
+
+    line-height: 1.6;
+
+    margin-top: 15px;
+}
+
+.card a {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #39A900;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.card a:hover {
+    color: #2f8d00;
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   QUIÉNES SOMOS
+===================================================== */
+
+.about {
+    padding: 120px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    background: white;
+}
+
+.about > div > span {
+    color: #39A900;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.about h2 {
+    margin: 20px 0;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+}
+
+.about h2 strong {
+    display: block;
+
+    color: #39A900;
+}
+
+.about p {
+    max-width: 600px;
+
+    color: #6e6e73;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final {
+    padding: 150px 30px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.final > span {
+    color: #39A900;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.final h2 {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    font-size: clamp(50px, 8vw, 95px);
+
+    line-height: .9;
+
+    letter-spacing: -6px;
+}
+
+.final h2 strong {
+    display: block;
+
+    color: #39A900;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 70px 30px;
+
+        gap: 35px;
+    }
+
+    .hero-text {
+        max-width: 550px;
+    }
+
+    .hero-text h1 {
+        font-size: 55px;
+    }
+
+    .hero-logo {
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero-logo .logo-sena {
+        width: 120px !important;
+
+        max-height: 120px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .about p {
+        margin: auto;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: auto;
+
+        padding: 65px 20px 75px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 46px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-text h1 strong {
+        display: block;
+    }
+
+    .hero-text p {
+        font-size: 17px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-logo {
+        width: 175px;
+        height: 175px;
+    }
+
+    .hero-logo .logo-sena {
+        width: 110px !important;
+
+        max-height: 110px;
+    }
+
+    .btn-sena {
+        padding: 13px 21px;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .title h2 {
+        font-size: 42px;
+
+        letter-spacing: -3px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .card {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+    .card h3 {
+        margin-top: 30px;
+    }
+
+    .about {
+        padding: 80px 25px;
+    }
+
+    .about h2 {
+        font-size: 45px;
+
+        letter-spacing: -3px;
+    }
+
+    .final {
+        padding: 100px 20px;
+    }
+
+    .final h2 {
+        font-size: 50px;
+
+        letter-spacing: -3px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - CELULARES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-logo .logo-sena {
+        width: 100px !important;
+
+        max-height: 100px;
+    }
+
+    .title h2 {
+        font-size: 37px;
+    }
+
+    .about h2 {
+        font-size: 40px;
+    }
+
+    .final h2 {
+        font-size: 43px;
+    }
+}

@@ -1,64 +1,172 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/pages/profesores.css') }}">
+@endsection
+
 @section('content')
 
-<h1>Formulario Instructores</h1>
+<div class="profesores-page">
 
-<form action="{{route('teacher.store')}}" method="POST" enctype="multipart/form-data">
+    <div class="profesor-form-card">
 
-@csrf
+        <div class="profesor-form-header">
 
-<label>
-    Nombre:
-    <br>
-    <input type="name" name="name">
-</label>
-<br>
-<br>
-<label>
-    Email:
-    <br>
-    <input type="text" name="email">
-</label>
-<br>
-<br>
+            <div>
 
-{{-- {{$areas}} --}}
+                <span>GESTIÓN DE INSTRUCTORES</span>
 
-<label for="area_id">Area</label>
+                <h1>
+                    Nuevo <strong>instructor.</strong>
+                </h1>
 
-    <select name="area_id" id="user_id" class="form-control">
-        <option value="">Seleccione un area</option>
+                <p>
+                    Registra un nuevo instructor en el sistema.
+                </p>
 
-        @foreach($areas as $area)
-            <option value="{{ $area->id }}">
-                {{ $area->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+            </div>
+
+            <a
+                href="{{ route('teacher.index') }}"
+                class="profesor-cancel"
+            >
+                <i class="bi bi-arrow-left"></i>
+                Volver
+            </a>
+
+        </div>
 
 
-    {{-- {{$training_centers}} --}}
+        <form
+            action="{{ route('teacher.store') }}"
+            method="POST"
+        >
 
-<label for="training_center_id">Training center</label>
+            @csrf
 
-    <select name="training_center_id" id="user_id" class="form-control">
-        <option value="">Seleccione un centro de formacion</option>
+            <div class="profesor-form-group">
 
-        @foreach($training_centers as $training_center)
-            <option value="{{ $training_center->id }}">
-                {{ $training_center->name }}
-            </option>
-        @endforeach
-    </select>
-    <br>
-    <br>
+                <label for="name">
+                    Nombre
+                </label>
+
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="{{ old('name') }}"
+                    placeholder="Nombre del instructor"
+                    required
+                >
+
+            </div>
 
 
-<button type="submit">Enviar Formulario</button>
-</form>
+            <div class="profesor-form-group">
 
+                <label for="email">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value="{{ old('email') }}"
+                    placeholder="correo@ejemplo.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="profesor-form-group">
+
+                <label for="area_id">
+                    Área
+                </label>
+
+                <select
+                    name="area_id"
+                    id="area_id"
+                    required
+                >
+
+                    <option value="">
+                        Seleccione un área
+                    </option>
+
+                    @foreach($areas as $area)
+
+                        <option
+                            value="{{ $area->id }}"
+                            {{ old('area_id') == $area->id ? 'selected' : '' }}
+                        >
+                            {{ $area->name }}
+                        </option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+
+
+            <div class="profesor-form-group">
+
+                <label for="training_center_id">
+                    Centro de formación
+                </label>
+
+                <select
+                    name="training_center_id"
+                    id="training_center_id"
+                    required
+                >
+
+                    <option value="">
+                        Seleccione un centro de formación
+                    </option>
+
+                    @foreach($training_centers as $training_center)
+
+                        <option
+                            value="{{ $training_center->id }}"
+                            {{ old('training_center_id') == $training_center->id ? 'selected' : '' }}
+                        >
+                            {{ $training_center->name }}
+                        </option>
+
+                    @endforeach
+
+                </select>
+
+            </div>
+
+
+            <div class="profesor-form-actions">
+
+                <a
+                    href="{{ route('teacher.index') }}"
+                    class="profesor-cancel"
+                >
+                    Cancelar
+                </a>
+
+                <button
+                    type="submit"
+                    class="profesores-button"
+                >
+                    <i class="bi bi-plus-circle"></i>
+                    Crear instructor
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
 @endsection
