@@ -26,16 +26,19 @@ class AreaController extends Controller
 
     public function store(Request $request)
     {
-        $area = Area::create($request->all());
-
-        return redirect()->route('area.index')->with('success', 'Área creada correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $area = Area::create($request->all());
+    return response()->json($area);
     }
+
 
     public function index()
     {
         $areas = Area::all();
 
-        return view('area.index', compact('areas'));
+        return response()->json($areas);
     }
 
     public function show($id)

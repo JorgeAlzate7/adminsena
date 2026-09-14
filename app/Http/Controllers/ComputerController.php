@@ -20,16 +20,18 @@ class ComputerController extends Controller
 
     public function store(Request $request)
     {
-        $computer = Computer::create($request->all());
-
-        return redirect()->route('computer.index')->with('success','computador creado correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $computer = Computer::create($request->all());
+    return response()->json($computer);
     }
-
+ 
     public function index()
     {
         $computers = Computer::all();
 
-        return view('computer.index', compact('computers'));
+        return response()->json($computers);
     }
 
     public function show($id)
@@ -57,4 +59,5 @@ class ComputerController extends Controller
 
         return redirect()->route('computer.index');
     }
+
 }

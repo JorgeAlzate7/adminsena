@@ -42,16 +42,18 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-        $teacher = Teacher::create($request->all());
-
-        return redirect()->route('teacher.index')->with('success','instrutor creado correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $teacher = Teacher::create($request->all());
+    return response()->json($teacher);
     }
 
     public function index()
     {
         $teachers = Teacher::all();
 
-        return view('teacher.index', compact('teachers'));
+        return response()->json($teachers);
     }
 
     public function show($id)

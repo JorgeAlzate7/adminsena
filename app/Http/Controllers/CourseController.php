@@ -43,16 +43,18 @@ class CourseController extends Controller
 
     public function store(Request $request)
     {
-        $course = Course::create($request->all());
-
-        return redirect()->route('course.index')->with('success','curso creado correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $course = Course::create($request->all());
+    return response()->json($course);
     }
 
     public function index()
     {
         $courses = Course::all();
 
-        return view('course.index', compact('courses'));
+        return response()->json($courses);
     }
 
     public function show($id)

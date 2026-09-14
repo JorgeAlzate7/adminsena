@@ -27,7 +27,7 @@ class AprendiceController extends Controller
     {
         $aprendices = Aprendice::all();
 
-        return view('aprendice.index', compact('aprendices'));
+        return response()->json($aprendices);
     }
 
     public function create()
@@ -43,9 +43,11 @@ class AprendiceController extends Controller
 
     public function store(Request $request)
     {
-        Aprendice::create($request->all());
-
-        return redirect()->route('aprendice.index')->with('success','Aprendiz creado correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $aprendices = Aprendice::create($request->all());
+    return response()->json($aprendices);
     }
 
     public function show($id)

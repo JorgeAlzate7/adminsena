@@ -26,18 +26,22 @@ class TrainingCenterController extends Controller
         return view('training_center.create');
     }
 
+    
+
     public function store(Request $request)
     {
-        $training_center = Training_center::create($request->all());
-
-        return redirect()->route('training_center.index')->with('success','instrutor creado correctamente');
+    $request->validate([
+        'name' => 'required|max:255',
+    ]);
+    $training_center = Training_center::create($request->all());
+    return response()->json($training_center);
     }
 
     public function index()
     {
         $training_centers = Training_center::all();
 
-        return view('training_center.index', compact('training_centers'));
+        return response()->json($training_centers);
     }
 
     public function show($id)
