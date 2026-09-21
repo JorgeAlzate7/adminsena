@@ -46,9 +46,8 @@ class TrainingCenterController extends Controller
 
     public function show($id)
     {
-        $centro = Training_center::find($id);
-
-        return view('training_center.show', compact('centro'));
+        $trainingCenter = Training_center::findOrFail($id);
+        return response()->json($trainingCenter);
     }
 
     public function edit(Training_center $training_center)
@@ -56,17 +55,17 @@ class TrainingCenterController extends Controller
         return view('training_center.edit', compact('training_center'));
     }
 
-    public function update(Request $request, Training_center $training_center)
+    public function update(Request $request, $id)
     {
-        $training_center->update($request->all());
-
-        return redirect()->route('training_center.index');
+        $trainingCenter = Training_center::findOrFail($id);
+        $trainingCenter->update($request->all());
+        return response()->json($trainingCenter);
     }
 
-    public function destroy(Training_center $training_center)
+    public function destroy($id)
     {
-        $training_center->delete();
-
-        return redirect()->route('training_center.index');
+        $trainingCenter = Training_center::findOrFail($id);
+        $trainingCenter->delete();
+        return response()->json(['message' => 'Eliminado correctamente']);
     }
 }

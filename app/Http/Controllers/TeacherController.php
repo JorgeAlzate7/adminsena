@@ -58,9 +58,8 @@ class TeacherController extends Controller
 
     public function show($id)
     {
-        $profesor = Teacher::find($id);
-
-        return view('teacher.show', compact('profesor'));
+        $teacher = Teacher::findOrFail($id);
+        return response()->json($teacher);
     }
 
     public function edit(Teacher $teacher)
@@ -74,18 +73,18 @@ class TeacherController extends Controller
         );
     }
 
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, $id)
     {
+        $teacher = Teacher::findOrFail($id);
         $teacher->update($request->all());
-
-        return redirect()->route('teacher.index');
+        return response()->json($teacher);
     }
 
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
+        $teacher = Teacher::findOrFail($id);
         $teacher->delete();
-
-        return redirect()->route('teacher.index');
+        return response()->json(['message' => 'Eliminado correctamente']);
     }
 }
 

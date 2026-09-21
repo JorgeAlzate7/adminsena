@@ -52,9 +52,8 @@ class AprendiceController extends Controller
 
     public function show($id)
     {
-        $aprendiz = Aprendice::findOrFail($id);
-
-        return view('aprendice.show', compact('aprendiz'));
+        $aprendice = Aprendice::findOrFail($id);
+        return response()->json($aprendice);
     }
 
     public function edit(Aprendice $aprendice)
@@ -68,17 +67,17 @@ class AprendiceController extends Controller
         );
     }
 
-    public function update(Request $request, Aprendice $aprendice)
+    public function update(Request $request, $id)
     {
+        $aprendice = Aprendice::findOrFail($id);
         $aprendice->update($request->all());
-
-        return redirect()->route('aprendice.index');
+        return response()->json($aprendice);
     }
 
-    public function destroy(Aprendice $aprendice)
+    public function destroy($id)
     {
+        $aprendice = Aprendice::findOrFail($id);
         $aprendice->delete();
-
-        return redirect()->route('aprendice.index');
+        return response()->json(['message' => 'Eliminado correctamente']);
     }
 }

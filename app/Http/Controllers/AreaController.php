@@ -43,9 +43,8 @@ class AreaController extends Controller
 
     public function show($id)
     {
-        $area = Area::find($id);
-
-        return view('area.show', compact('area'));
+        $area = Area::findOrFail($id);
+        return response()->json($area);
     }
 
     public function edit(Area $area)
@@ -53,17 +52,17 @@ class AreaController extends Controller
         return view('area.edit', compact('area'));
     }
 
-    public function update(Request $request, Area $area)
+    public function update(Request $request, $id)
     {
+        $area = Area::findOrFail($id);
         $area->update($request->all());
-
-        return redirect()->route('area.index');
+        return response()->json($area);
     }
 
-    public function destroy(Area $area)
+    public function destroy($id)
     {
+        $area = Area::findOrFail($id);
         $area->delete();
-
-        return redirect()->route('area.index');
+        return response()->json(['message' => 'Eliminado correctamente']);
     }
 }

@@ -59,9 +59,8 @@ class CourseController extends Controller
 
     public function show($id)
     {
-        $curso = Course::find($id);
-
-        return view('course.show', compact('curso'));
+        $course = Course::findOrFail($id);
+        return response()->json($course);
     }
 
     public function edit(Course $course)
@@ -75,17 +74,17 @@ class CourseController extends Controller
         );
     }
 
-    public function update(Request $request, Course $course)
+    public function update(Request $request, $id)
     {
+        $course = Course::findOrFail($id);
         $course->update($request->all());
-
-        return redirect()->route('course.index');
+        return response()->json($course);
     }
 
-    public function destroy(Course $course)
+    public function destroy($id)
     {
+        $course = Course::findOrFail($id);
         $course->delete();
-
-        return redirect()->route('course.index');
+        return response()->json(['message' => 'Eliminado correctamente']);
     }
 }
