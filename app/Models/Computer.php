@@ -12,7 +12,9 @@ class Computer extends Model
     
     protected $fillable = [
         'number',
-        'brand'
+        'brand',
+        'marca',
+        'imagen_url',
     ];
 
 

@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Opción 1: Rutas individuales corregidas
-Route::name('api.v1.')->group(function () {
+// Definición limpia de endpoints de la API
+Route::prefix('/')->group(function () {
 
     // Training Center
     Route::post('training_center/store', [TrainingCenterController::class, 'store'])->name('training_center.store');
@@ -40,10 +40,9 @@ Route::name('api.v1.')->group(function () {
     Route::post('computer/store', [ComputerController::class, 'store'])->name('computer.store');
     Route::get('computer/list', [ComputerController::class, 'index'])->name('computer.index');
     Route::get('computer/show/{id}', [ComputerController::class, 'show'])->name('computer.show');
-    Route::put('computer/{computer}', [ComputerController::class, 'update'])->name('computer.update');
-    Route::delete('computer/{computer}', [ComputerController::class, 'destroy'])->name('computer.destroy');
+Route::put('computer/{id}', [ComputerController::class, 'update'])->name('computer.update');    Route::delete('computer/{computer}', [ComputerController::class, 'destroy'])->name('computer.destroy');
 
-    // Aprendice (Corregido)
+    // Aprendice
     Route::post('aprendice/store', [AprendiceController::class, 'store'])->name('aprendice.store');
     Route::get('aprendice/list', [AprendiceController::class, 'index'])->name('aprendice.index');
     Route::get('aprendice/show/{id}', [AprendiceController::class, 'show'])->name('aprendice.show');

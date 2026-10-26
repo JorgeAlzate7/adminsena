@@ -42,18 +42,22 @@ class TeacherController extends Controller
 
     public function store(Request $request)
     {
-    $request->validate([
-        'name' => 'required|max:255',
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'area_id' => 'required|integer',
+        'training_center_id' => 'required|integer',
     ]);
-    $teacher = Teacher::create($request->all());
-    return response()->json($teacher);
+
+    $teacher = Teacher::create($validated);
+
+    return response()->json($teacher, 201);
     }
 
     public function index()
     {
-        $teachers = Teacher::all();
-
-        return response()->json($teachers);
+        // Carga las relaciones intentando ambos nombres de relación por compatibilidad
+        return Teacher::with(['area', 'trainingCenter', 'training_center'])->get();
     }
 
     public function show($id)
